@@ -9,17 +9,52 @@
 #import "NextMetroAppDelegate.h"
 
 #import "NextMetroViewController.h"
+#import "NextMetroStationStore.h"
 
 @implementation NextMetroAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager setDelegate:self];
+    [locationManager setDesiredAccuracy:kCLLocationAccuracyKilometer];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
+    
+    viewController = [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+    
+    if (viewController != nil) {
+        UIPageViewController *pageViewController = (UIPageViewController *)self.window.rootViewController;
+        pageViewController.dataSource = self;
+        
+        [pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+    }
     return YES;
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerBeforeViewController:(NextMetroViewController *)vc
+{
+    return [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerAfterViewController:(NextMetroViewController *)vc
+{
+    return [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [[NextMetroStationStore defaultStore] updateLocation:locations.lastObject];
+    NSString *currentStationName = [[[NextMetroStationStore defaultStore] currentStation] ]
+    if ([currentStationName isEqualToString: [[[NextMetroStationStore defaultStore] currentStation]] stationName]) {
+        
+    }
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"%@", error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

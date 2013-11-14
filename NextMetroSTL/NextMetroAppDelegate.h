@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @class NextMetroViewController;
+@class CLLocationManager;
 
-@interface NextMetroAppDelegate : UIResponder <UIApplicationDelegate>
+@interface NextMetroAppDelegate : UIResponder <UIApplicationDelegate, UIPageViewControllerDataSource> {
+    NextMetroViewController *viewController;
+    CLLocationManager *locationManager;
+    NSString *currentStationName;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) NextMetroViewController *viewController;
 
 @end
