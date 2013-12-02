@@ -16,8 +16,9 @@
 }
 
 + (NextMetroStationStore *) defaultStore;
-
+- (NSString*) findClosestLocation:(CLLocation *)location;
 - (void) updateLocation:(CLLocation *)location;
+- (NextMetroStation*) theCurrentStation;
 
 @property(nonatomic, strong) NextMetroStation *currentStation;
 

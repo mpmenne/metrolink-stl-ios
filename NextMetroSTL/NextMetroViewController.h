@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+@class NextMetroTrain;
 
 @interface NextMetroViewController : UIViewController
 {
-    CLLocationManager *locationManager;
     
     int count;
     NSTimer *nsTimer;
@@ -19,8 +19,21 @@
     IBOutlet UILabel *timeUntilNextTrain;
     IBOutlet UILabel *currentStation;
     IBOutlet UILabel *stationNickName;
+    IBOutlet UILabel *trainTime;
+    IBOutlet UILabel *departureLabel;
 
 }
+
++(NextMetroViewController*) blankView;
++(NextMetroViewController *)viewForNextTrain:(NSDate*)atTime;
++(NextMetroViewController *) viewForPreviousTrain:(NSDate*)atTime;
+
+-(IBAction)createReminder:(id)sender;
+
+-(id) initForTrain:(NextMetroTrain*)train atStation:(NSString*) stationName;
+
+
+-(NSDate*)nextTrainTime;
 
 
 @end

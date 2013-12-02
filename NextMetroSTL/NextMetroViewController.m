@@ -1,4 +1,4 @@
-//
+ //
 //  NextMetroViewController.m
 //  NextMetroSTL
 //
@@ -10,46 +10,81 @@
 #import "AudioToolbox/AudioToolbox.h"
 #import "NextMetroStationStore.h"
 #import "NextMetroStation.h"
+#import "NextMetroTrain.h"
+#import "NextMetroReminderStore.h"
+#import "Math.h"
 
 @interface NextMetroViewController ()
-
+{
+    int _millisTilTrain;
+    NSDate *_nextTrainTime;
+    NSString *_stationName;
+    NextMetroTrain *_train;
+}
 @end
 
 @implementation NextMetroViewController
 
++(NextMetroViewController*)blankView
+{
+    return [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+}
+
++(NextMetroViewController*)viewForNextTrain:(NSDate*)atTime
+{
+    NextMetroTrain *nextTrain = [[[NextMetroStationStore defaultStore] currentStation] nextTrain: atTime];
+    if (nextTrain == nil)
+        return nil;
+
+    NSString *stationName = [[[NextMetroStationStore defaultStore] currentStation] name];
+    return [[NextMetroViewController alloc] initForTrain:nextTrain atStation:stationName withTime:[nextTrain trainTime]];
+}
+
++(NextMetroViewController*)viewForPreviousTrain:(NSDate*)atTime
+{
+    NextMetroTrain *previousTrain = [[[NextMetroStationStore defaultStore] currentStation] previousTrain:atTime];
+    if (previousTrain == nil)
+        return nil;
+    
+    NSString *stationName = [[[NextMetroStationStore defaultStore] currentStation] name];
+    return [[NextMetroViewController alloc] initForTrain:previousTrain atStation:stationName withTime:[previousTrain trainTime]];
+}
+
+-(NSDate*) nextTrainTime
+{
+    return _nextTrainTime;
+}
+
+-(id)initForTrain:(NextMetroTrain*)train atStation:(NSString *)stationName withTime:(NSDate*)time
+{
+    self = [super initWithNibName:@"NextMetroViewController" bundle:nil];
+    _stationName = stationName;
+    _train = train;
+    _nextTrainTime = time;
+    _millisTilTrain = [train millisUntilTrain];
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    if (_train) {
+        [currentStation setText:_stationName];
+        [trainHeader setText:_train.header];
+        [timeUntilNextTrain setText:[self formatDuration:_millisTilTrain]];
+        [trainTime setText: [NSString stringWithFormat:@"departure at %@", _train.arrivalTime]];
+    }
+    
     [self initTimer];
     count = 6;
-    locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDelegate:self];
-    [locationManager setDesiredAccuracy:kCLLocationAccuracyKilometer];
-    [locationManager startMonitoringSignificantLocationChanges];
-    [locationManager startUpdatingLocation];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+-(IBAction)createReminder:(id)sender
 {
-    if (count > 5) {
-        NSLog(@"%@", locations);
-        CLLocation *clLocation = [locations lastObject];
-        NextMetroStationStore *store = [NextMetroStationStore defaultStore];
-        [store updateLocation:clLocation];
-        [currentStation setText: [[store currentStation] name]];
-        [stationNickName setText: [[store currentStation] nickName]];
-        [trainHeader setText:[[[store currentStation] nextTrain] header]];
-        [timeUntilNextTrain setText:[[[store currentStation] nextTrain] timeUntilTrain]];
-        count = 0;
-    }
-}
-
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"%@", error);
+    NSLog(@"Hey we're going to create a reminder now.");
+    NextMetroReminderStore *remindersStore = [NextMetroReminderStore reminders];
+    [remindersStore addEvent:[NSString stringWithFormat:@"Metrolink Reminder \r\n %@", _train.header]];
 }
 
 - (void)initTimer
@@ -61,17 +96,38 @@
 
 - (void) fireTimer
 {
-//    if (count > 0) {
-//        count = count - 1000;
-//    } else {
-//        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"music_noise" ofType:@"wav"];
-//        SystemSoundID soundID;
-//        AudioServicesCreateSystemSoundID( (__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
-//        AudioServicesPlaySystemSound(soundID);
-//    }
-
+    _millisTilTrain = _millisTilTrain - 1;
     count++;
-    [timeUntilNextTrain setText:[[[[NextMetroStationStore defaultStore] currentStation] nextTrain] timeUntilTrain]];
+    if (_millisTilTrain <= 0) {
+        [nsTimer invalidate];
+        [timeUntilNextTrain setText:@"swipe <<"];
+        return;
+    }
+    [timeUntilNextTrain setText:[self formatDuration:_millisTilTrain]];
+}
+
+- (NSString *)formatDuration:(int)totalSeconds
+{
+    int absoluteSeconds = abs(totalSeconds);
+    int seconds = absoluteSeconds % 60;
+    int minutes = (absoluteSeconds / 60) % 60;
+    int hours = (absoluteSeconds / 3600) % 24;
+    
+    if (totalSeconds > 0) {
+        if (hours && hours >= 0) {
+            return [NSString stringWithFormat:@"%d:%02d:%02d", hours, minutes, seconds];
+        } else {
+            return [NSString stringWithFormat:@"%d:%02d", minutes, seconds];
+        }
+    } else  {
+        if (hours && hours > 0) {
+            return [NSString stringWithFormat:@"-%d:%02d:%02d", hours, minutes, seconds];
+        } else {
+            return [NSString stringWithFormat:@"-%d:%02d", minutes, seconds];
+        }
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,9 +136,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) dealloc
-{
-    [locationManager setDelegate:nil];
-}
+
+
 
 @end

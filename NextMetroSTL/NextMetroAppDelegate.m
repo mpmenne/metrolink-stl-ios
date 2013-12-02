@@ -10,6 +10,14 @@
 
 #import "NextMetroViewController.h"
 #import "NextMetroStationStore.h"
+#import "NextMetroStation.h"
+#import "NextMetroTrain.h"
+
+@interface NextMetroAppDelegate()
+{
+    
+}
+@end
 
 @implementation NextMetroAppDelegate
 
@@ -17,39 +25,72 @@
 {
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
-    [locationManager setDesiredAccuracy:kCLLocationAccuracyKilometer];
+    [locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
     [locationManager startMonitoringSignificantLocationChanges];
     [locationManager startUpdatingLocation];
+    currentStationName = @"none";
     
-    viewController = [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+    NextMetroViewController *blankView = [NextMetroViewController blankView];
     
-    if (viewController != nil) {
+    if (blankView) {
+        
+        
         UIPageViewController *pageViewController = (UIPageViewController *)self.window.rootViewController;
         pageViewController.dataSource = self;
         
-        [pageViewController setViewControllers:@[viewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+        [pageViewController setViewControllers:@[blankView]
+                                     direction:UIPageViewControllerNavigationDirectionForward
+                                      animated:NO
+                                    completion:NULL];
     }
     return YES;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerBeforeViewController:(NextMetroViewController *)vc
 {
-    return [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+    NextMetroViewController *previousView = [NextMetroViewController viewForPreviousTrain:[vc nextTrainTime]];
+    // show the view if it is less than five minutes difference
+    NSComparisonResult recentResult = [[previousView nextTrainTime] compare:[[NSDate date] dateByAddingTimeInterval:-180]];
+    if (recentResult == NSOrderedDescending || recentResult == NSOrderedSame) {
+        return previousView;
+    }
+    NSComparisonResult result = [[previousView nextTrainTime] compare:[NSDate date]];
+    if (result == NSOrderedAscending) {
+        return nil;
+    }
+    return previousView;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pvc viewControllerAfterViewController:(NextMetroViewController *)vc
 {
-    return [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+    return [NextMetroViewController viewForNextTrain:[vc nextTrainTime]];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [[NextMetroStationStore defaultStore] updateLocation:locations.lastObject];
-    NSString *currentStationName = [[[NextMetroStationStore defaultStore] currentStation] ]
-    if ([currentStationName isEqualToString: [[[NextMetroStationStore defaultStore] currentStation]] stationName]) {
-        
+    NSString *closestStation = [[NextMetroStationStore defaultStore] findClosestLocation:locations.lastObject];
+    if (![currentStationName isEqualToString: closestStation]) {
+        [self refreshStation:[locations lastObject]];
     }
     
+}
+
+- (void)refreshStation:(CLLocation*)location
+{
+    [NextMetroStationStore.defaultStore updateLocation:location];
+    currentStationName = NextMetroStationStore.defaultStore.currentStation.name;
+    
+    NextMetroViewController *newPageView = [NextMetroViewController viewForNextTrain:[NSDate date]];
+    UIPageViewController *pageViewController = (UIPageViewController *)self.window.rootViewController;
+    [pageViewController setViewControllers:@[newPageView]
+                                 direction:UIPageViewControllerNavigationDirectionForward
+                                  animated:NO
+                                completion:NULL];
+}
+
+-(void) dealloc
+{
+    locationManager = nil;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -76,7 +117,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSLog(@"We are active!   %@", NSStringFromSelector(_cmd));
+    currentStationName = nil;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

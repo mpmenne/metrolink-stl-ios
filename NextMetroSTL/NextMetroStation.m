@@ -24,18 +24,37 @@
     return self;
 }
 
--(NextMetroTrain*) nextTrain
+-(NextMetroTrain*) nextTrain:(NSDate *)time
 {
-    return [self findNextTrain];
+    return [self findNextTrain:time];
 }
 
--(NextMetroTrain*) findNextTrain
+-(NextMetroTrain*) previousTrain:(NSDate *)time
 {
-    NSDate *now = [[NSDate alloc] init];
+    return [self findPreviousTrain:time];
+}
+
+-(NextMetroTrain*) findNextTrain:(NSDate*)startingAt
+{
     for (NextMetroTrain *train in [self trains]) {
-        NSComparisonResult result = [[train trainTime] compare:now];
+        NSComparisonResult result = [[train trainTime] compare:startingAt];
         if (result == NSOrderedDescending) {
             return train;
+        }
+    }
+    return nil;
+}
+
+-(NextMetroTrain*) findPreviousTrain:(NSDate*)startingAt
+{
+    NextMetroTrain *mostRecentTrain;
+    for (NextMetroTrain *train in [self trains]) {
+        NSComparisonResult result = [[train trainTime] compare:startingAt];
+        if (result == NSOrderedAscending || result != NSOrderedSame) {
+            mostRecentTrain = train;
+            continue;
+        } else {
+            return mostRecentTrain;
         }
     }
     return nil;
@@ -54,7 +73,7 @@
     for (NSString *line in scheduleLines) {
         NSArray *columns = [line componentsSeparatedByString:@","];
         if ([columns count] > 3) {
-            NSArray *timeSegments = [columns[3] componentsSeparatedByString:@":"];
+            NSArray *timeSegments = [columns[5] componentsSeparatedByString:@":"];
             NSDateComponents *todayComponents = [calendar components:NSUIntegerMax fromDate:now];
             [todayComponents setHour: [timeSegments[0] intValue]];
             [todayComponents setMinute: [timeSegments[1] intValue]];

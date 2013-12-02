@@ -16,7 +16,9 @@
 
 -(id) initWithName: (NSString *)name withNickName:(NSString*)nickName;
 
--(NextMetroTrain*) nextTrain;
+-(NextMetroTrain*) nextTrain:(NSDate*)time;
+-(NextMetroTrain*) previousTrain:(NSDate*)time;
+
 
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* nickName;

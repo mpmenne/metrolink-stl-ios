@@ -23,9 +23,9 @@
     return self;
 }
 
--(NSString*) timeUntilTrain
+-(NSString*) arrivalTime
 {
-    return [self timeFormatted:[self calculateTimeUntilNextTrain]];
+    return [self formatTime:[self trainTime]];
 }
 
 -(NSInteger) millisUntilTrain
@@ -39,17 +39,14 @@
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *laterDate = [self trainTime];
     
-    return [[calendar components:(NSHourCalendarUnit | NSSecondCalendarUnit) fromDate:now toDate:laterDate options:0] second];
+    return [[calendar components:(NSSecondCalendarUnit) fromDate:now toDate:laterDate options:0] second];
 }
 
-- (NSString *)timeFormatted:(int)totalSeconds
+- (NSString *)formatTime:(NSDate*)date
 {
-    
-    int seconds = totalSeconds % 60;
-    int minutes = (totalSeconds / 60) % 60;
-    int hours = totalSeconds / 3600;
-    
-    return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+    NSDateFormatter *dformat = [[NSDateFormatter alloc]init];
+    [dformat setDateFormat:@"hh:mm a"];
+    return [dformat stringFromDate:date];
 }
 
 @end

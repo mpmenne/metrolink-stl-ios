@@ -16,8 +16,7 @@
 
 - (id) initWithHeader:(NSString *)header withColor:(NSString *)color withTime:(NSDate *)time;
 
-- (NSString*) timeUntilTrain;
-
+- (NSString*) arrivalTime;
 - (NSInteger) millisUntilTrain;
 
 @property(nonatomic, readwrite, strong) NSDate *trainTime;
