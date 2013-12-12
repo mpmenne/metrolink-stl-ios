@@ -10,6 +10,7 @@
 #import "AudioToolbox/AudioToolbox.h"
 #import "NextMetroStationStore.h"
 #import "NextMetroStation.h"
+#import "NextMetroUtil.h"
 #import "NextMetroTrain.h"
 #import "NextMetroReminderStore.h"
 #import "Math.h"
@@ -27,7 +28,8 @@
 
 +(NextMetroViewController*)blankView
 {
-    return [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+    NextMetroViewController *view = [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
+    return view;
 }
 
 +(NextMetroViewController*)viewForNextTrain:(NSDate*)atTime
@@ -37,7 +39,9 @@
         return nil;
 
     NSString *stationName = [[[NextMetroStationStore defaultStore] currentStation] name];
-    return [[NextMetroViewController alloc] initForTrain:nextTrain atStation:stationName withTime:[nextTrain trainTime]];
+    NextMetroViewController *controllerView = [[NextMetroViewController alloc] initForTrain:nextTrain atStation:stationName withTime:[nextTrain trainTime]];
+    [controllerView.view setBackgroundColor:[NextMetroUtil colorWithHexString:@"D1EEFC"]];
+    return controllerView;
 }
 
 +(NextMetroViewController*)viewForPreviousTrain:(NSDate*)atTime
@@ -70,6 +74,7 @@
     [super viewDidLoad];
 
     if (_train) {
+        [currentStation setText:@""];
         [currentStation setText:_stationName];
         [trainHeader setText:_train.header];
         [timeUntilNextTrain setText:[self formatDuration:_millisTilTrain]];

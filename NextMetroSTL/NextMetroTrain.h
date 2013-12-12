@@ -14,12 +14,13 @@
 }
 
 
-- (id) initWithHeader:(NSString *)header withColor:(NSString *)color withTime:(NSDate *)time;
+- (id) initWithHeader:(NSString *)header withColor:(NSString *)color withTime:(NSDate *)time withDeparture:(NSDate*)departureTime;
 
 - (NSString*) arrivalTime;
 - (NSInteger) millisUntilTrain;
 
 @property(nonatomic, readwrite, strong) NSDate *trainTime;
+@property(nonatomic, readwrite, strong) NSDate *departureTime;
 @property(nonatomic, copy) NSString *header;
 @property(nonatomic, copy) NSString *color;
 

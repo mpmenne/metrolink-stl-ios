@@ -10,15 +10,16 @@
 
 @implementation NextMetroTrain
 
-@synthesize trainTime, header, color;
+@synthesize trainTime, header, color, departureTime;
 
--(id) initWithHeader:(NSString *)newHeader withColor:(NSString *)newColor withTime:(NSDate *)newTime
+-(id) initWithHeader:(NSString *)newHeader withColor:(NSString *)newColor withTime:(NSDate *)newTime withDeparture:(NSDate*) departureTime
 {
     self = [super init];
     if (self) {
         [self setHeader:newHeader];
         [self setColor:newColor];
         [self setTrainTime:newTime];
+        [self setDepartureTime:departureTime];
     }
     return self;
 }
