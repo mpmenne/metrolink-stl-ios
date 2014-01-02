@@ -13,6 +13,7 @@
 #import "NextMetroUtil.h"
 #import "NextMetroTrain.h"
 #import "NextMetroReminderStore.h"
+#import "NextMetroBackgroundLayer.h"
 #import "Math.h"
 
 @interface NextMetroViewController ()
@@ -25,22 +26,41 @@
 @end
 
 @implementation NextMetroViewController
+@synthesize uiBackgroundColor;
 
 +(NextMetroViewController*)blankView
 {
-    NextMetroViewController *view = [[NextMetroViewController alloc] initWithNibName:@"NextMetroViewController" bundle:nil];
-    return view;
+    NextMetroViewController *controllerView = [[NextMetroViewController alloc] initForTrain:nil atStation:@"Please enable GPS to use this app" withTime:nil];
+    return controllerView;
+}
+
++(NextMetroViewController*)stationNotFoundView
+{
+    NextMetroViewController *controllerView = [[NextMetroViewController alloc] initForTrain:nil atStation:@"Current Station Not Found" withTime:nil];
+    [controllerView setBackgroundToColor:[UIColor grayColor]];
+    return controllerView;
+}
+
++(NextMetroViewController*)gpsNotEnabledView
+{
+    NextMetroViewController *controllerView = [[NextMetroViewController alloc] initForTrain:nil atStation:@"Please enable GPS11 to use this app" withTime:nil];
+    [controllerView setBackgroundToColor:[UIColor grayColor]];
+    return controllerView;
 }
 
 +(NextMetroViewController*)viewForNextTrain:(NSDate*)atTime
 {
-    NextMetroTrain *nextTrain = [[[NextMetroStationStore defaultStore] currentStation] nextTrain: atTime];
+    NextMetroStation *currentStation = [[NextMetroStationStore defaultStore] currentStation];
+    if (currentStation == nil) {
+        return [self stationNotFoundView];
+    }
+    NextMetroTrain *nextTrain = [currentStation nextTrain: atTime];
     if (nextTrain == nil)
         return nil;
 
     NSString *stationName = [[[NextMetroStationStore defaultStore] currentStation] name];
     NextMetroViewController *controllerView = [[NextMetroViewController alloc] initForTrain:nextTrain atStation:stationName withTime:[nextTrain trainTime]];
-    [controllerView.view setBackgroundColor:[NextMetroUtil colorWithHexString:@"D1EEFC"]];
+    
     return controllerView;
 }
 
@@ -66,6 +86,7 @@
     _train = train;
     _nextTrainTime = time;
     _millisTilTrain = [train millisUntilTrain];
+    [self setUiBackgroundColor: [NextMetroUtil colorWithHexString:_train.color]];
     return self;
 }
 
@@ -79,10 +100,28 @@
         [trainHeader setText:_train.header];
         [timeUntilNextTrain setText:[self formatDuration:_millisTilTrain]];
         [trainTime setText: [NSString stringWithFormat:@"departure at %@", _train.arrivalTime]];
+        [self setBackgroundToColor:uiBackgroundColor];
+        count = 6;
+        [self initTimer];
+    } else {
+        [currentStation setText:_stationName];
+        [self setBackgroundToColor:uiBackgroundColor];
     }
-    
-    [self initTimer];
-    count = 6;
+
+}
+
+- (void) setBackgroundToColor:(UIColor *)uiColor
+{
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    // gradient.frame = self.view.bounds;
+    gradient.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height + 50);
+    gradient.colors = [NSArray arrayWithObjects:(id)[uiColor CGColor], (id)[[UIColor blackColor]CGColor], nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"Hey we just noticed that you scrolled");
 }
 
 -(IBAction)createReminder:(id)sender
@@ -138,6 +177,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    NSLog(@"Did just receive memory warning");
     // Dispose of any resources that can be recreated.
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1428F89F18753A4700F1D25A /* stations.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1428F89E18753A4700F1D25A /* stations.csv */; };
 		143E6E9417F528BE00FCC26C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6E9317F528BE00FCC26C /* UIKit.framework */; };
 		143E6E9617F528BE00FCC26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6E9517F528BE00FCC26C /* Foundation.framework */; };
 		143E6E9817F528BE00FCC26C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6E9717F528BE00FCC26C /* CoreGraphics.framework */; };
@@ -25,47 +26,120 @@
 		143E6EC517F528BE00FCC26C /* NextMetroSTLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 143E6EC417F528BE00FCC26C /* NextMetroSTLTests.m */; };
 		143E6ECF17FA6DAD00FCC26C /* music_noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 143E6ECE17FA6DAD00FCC26C /* music_noise.wav */; };
 		143E6ED117FA73FF00FCC26C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6ED017FA73FF00FCC26C /* AudioToolbox.framework */; };
-		143E6ED317FA7E5900FCC26C /* shrewsbury.csv in Resources */ = {isa = PBXBuildFile; fileRef = 143E6ED217FA7E5900FCC26C /* shrewsbury.csv */; };
 		1452795A17FBBF7800AC912F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1452795917FBBF7800AC912F /* CoreLocation.framework */; };
-		1452795C17FBC94B00AC912F /* stations.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1452795B17FBC94B00AC912F /* stations.csv */; };
+		14770CCE1842A67B00BC8E58 /* NextMetroTrailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14770CCD1842A67B00BC8E58 /* NextMetroTrailTests.m */; };
+		14770CD11842DCA300BC8E58 /* NSDate+NSDateMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 14770CD01842DCA300BC8E58 /* NSDate+NSDateMock.m */; };
+		14770CD41842E04500BC8E58 /* NextMetroSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14770CD31842E04500BC8E58 /* NextMetroSwizzle.m */; };
+		14770CD71844159D00BC8E58 /* NextMetroReminderStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14770CD61844159D00BC8E58 /* NextMetroReminderStore.m */; };
+		14770CDA1844193D00BC8E58 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14770CD8184418F300BC8E58 /* EventKit.framework */; };
+		14A352C718596754004D149E /* NextMetroUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A352C618596754004D149E /* NextMetroUtil.m */; };
+		14A352CC185971E8004D149E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A352CB185971E8004D149E /* QuartzCore.framework */; };
+		14A352E11865CBE3004D149E /* richmond_heights-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14A352DE1865CBE3004D149E /* richmond_heights-mf.csv */; };
+		14A352E21865CBE3004D149E /* richmond_heights-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14A352DF1865CBE3004D149E /* richmond_heights-saturday.csv */; };
+		14A352E31865CBE3004D149E /* richmond_heights-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14A352E01865CBE3004D149E /* richmond_heights-sunday.csv */; };
 		14BBD44B18334EEF00A351F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6E9717F528BE00FCC26C /* CoreGraphics.framework */; };
 		14BBD44E18334FA000A351F4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BBD44C18334FA000A351F4 /* MainStoryboard.storyboard */; };
+		14C139331855469200D9D456 /* 5th_missouri-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138CC1855469200D9D456 /* 5th_missouri-mf.csv */; };
+		14C139341855469200D9D456 /* 5th_missouri-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138CD1855469200D9D456 /* 5th_missouri-saturday.csv */; };
+		14C139351855469200D9D456 /* 5th_missouri-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138CE1855469200D9D456 /* 5th_missouri-sunday.csv */; };
+		14C139361855469200D9D456 /* 8th_pine-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138CF1855469200D9D456 /* 8th_pine-mf.csv */; };
+		14C139371855469200D9D456 /* 8th_pine-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D01855469200D9D456 /* 8th_pine-saturday.csv */; };
+		14C139381855469200D9D456 /* 8th_pine-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D11855469200D9D456 /* 8th_pine-sunday.csv */; };
+		14C139391855469200D9D456 /* arch_lacledes-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D21855469200D9D456 /* arch_lacledes-mf.csv */; };
+		14C1393A1855469200D9D456 /* arch_lacledes-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D31855469200D9D456 /* arch_lacledes-saturday.csv */; };
+		14C1393B1855469200D9D456 /* arch_lacledes-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D41855469200D9D456 /* arch_lacledes-sunday.csv */; };
+		14C1393C1855469200D9D456 /* belleville-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D51855469200D9D456 /* belleville-mf.csv */; };
+		14C1393D1855469200D9D456 /* belleville-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D61855469200D9D456 /* belleville-saturday.csv */; };
+		14C1393E1855469200D9D456 /* belleville-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D71855469200D9D456 /* belleville-sunday.csv */; };
+		14C1393F1855469200D9D456 /* brentwood-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D81855469200D9D456 /* brentwood-mf.csv */; };
+		14C139401855469200D9D456 /* brentwood-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138D91855469200D9D456 /* brentwood-saturday.csv */; };
+		14C139411855469200D9D456 /* brentwood-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138DA1855469200D9D456 /* brentwood-sunday.csv */; };
+		14C139421855469200D9D456 /* central_west_end-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138DB1855469200D9D456 /* central_west_end-mf.csv */; };
+		14C139431855469200D9D456 /* central_west_end-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138DC1855469200D9D456 /* central_west_end-saturday.csv */; };
+		14C139441855469200D9D456 /* central_west_end-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138DD1855469200D9D456 /* central_west_end-sunday.csv */; };
+		14C139451855469200D9D456 /* civic_center-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138DE1855469200D9D456 /* civic_center-mf.csv */; };
+		14C139461855469200D9D456 /* civic_center-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138DF1855469200D9D456 /* civic_center-saturday.csv */; };
+		14C139471855469200D9D456 /* civic_center-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E01855469200D9D456 /* civic_center-sunday.csv */; };
+		14C139481855469200D9D456 /* clayton-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E11855469200D9D456 /* clayton-mf.csv */; };
+		14C139491855469200D9D456 /* clayton-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E21855469200D9D456 /* clayton-saturday.csv */; };
+		14C1394A1855469200D9D456 /* clayton-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E31855469200D9D456 /* clayton-sunday.csv */; };
+		14C1394B1855469200D9D456 /* college-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E41855469200D9D456 /* college-mf.csv */; };
+		14C1394C1855469200D9D456 /* college-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E51855469200D9D456 /* college-saturday.csv */; };
+		14C1394D1855469200D9D456 /* college-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E61855469200D9D456 /* college-sunday.csv */; };
+		14C1394E1855469200D9D456 /* convention_center-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E71855469200D9D456 /* convention_center-mf.csv */; };
+		14C1394F1855469200D9D456 /* convention_center-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E81855469200D9D456 /* convention_center-saturday.csv */; };
+		14C139501855469200D9D456 /* convention_center-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138E91855469200D9D456 /* convention_center-sunday.csv */; };
+		14C139511855469200D9D456 /* delmar-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138EA1855469200D9D456 /* delmar-mf.csv */; };
+		14C139521855469200D9D456 /* delmar-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138EB1855469200D9D456 /* delmar-saturday.csv */; };
+		14C139531855469200D9D456 /* delmar-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138EC1855469200D9D456 /* delmar-sunday.csv */; };
+		14C139541855469200D9D456 /* east_riverfront-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138ED1855469200D9D456 /* east_riverfront-mf.csv */; };
+		14C139551855469200D9D456 /* east_riverfront-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138EE1855469200D9D456 /* east_riverfront-saturday.csv */; };
+		14C139561855469200D9D456 /* east_riverfront-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138EF1855469200D9D456 /* east_riverfront-sunday.csv */; };
+		14C139571855469200D9D456 /* emerson_park-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F01855469200D9D456 /* emerson_park-mf.csv */; };
+		14C139581855469200D9D456 /* emerson_park-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F11855469200D9D456 /* emerson_park-saturday.csv */; };
+		14C139591855469200D9D456 /* emerson_park-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F21855469200D9D456 /* emerson_park-sunday.csv */; };
+		14C1395A1855469200D9D456 /* fairview_heights-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F31855469200D9D456 /* fairview_heights-mf.csv */; };
+		14C1395B1855469200D9D456 /* fairview_heights-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F41855469200D9D456 /* fairview_heights-saturday.csv */; };
+		14C1395C1855469200D9D456 /* fairview_heights-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F51855469200D9D456 /* fairview_heights-sunday.csv */; };
+		14C1395D1855469200D9D456 /* forest_park-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F61855469200D9D456 /* forest_park-mf.csv */; };
+		14C1395E1855469200D9D456 /* forest_park-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F71855469200D9D456 /* forest_park-saturday.csv */; };
+		14C1395F1855469200D9D456 /* forest_park-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F81855469200D9D456 /* forest_park-sunday.csv */; };
+		14C139601855469200D9D456 /* forsyth-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138F91855469200D9D456 /* forsyth-mf.csv */; };
+		14C139611855469200D9D456 /* forsyth-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138FA1855469200D9D456 /* forsyth-saturday.csv */; };
+		14C139621855469200D9D456 /* forsyth-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138FB1855469200D9D456 /* forsyth-sunday.csv */; };
+		14C139631855469200D9D456 /* grand-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138FC1855469200D9D456 /* grand-mf.csv */; };
+		14C139641855469200D9D456 /* grand-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138FD1855469200D9D456 /* grand-saturday.csv */; };
+		14C139651855469200D9D456 /* grand-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138FE1855469200D9D456 /* grand-sunday.csv */; };
+		14C139661855469200D9D456 /* jjk_center-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C138FF1855469200D9D456 /* jjk_center-mf.csv */; };
+		14C139671855469200D9D456 /* jjk_center-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139001855469200D9D456 /* jjk_center-saturday.csv */; };
+		14C139681855469200D9D456 /* jjk_center-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139011855469200D9D456 /* jjk_center-sunday.csv */; };
+		14C139691855469200D9D456 /* lambert_east-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139021855469200D9D456 /* lambert_east-mf.csv */; };
+		14C1396A1855469200D9D456 /* lambert_east-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139031855469200D9D456 /* lambert_east-saturday.csv */; };
+		14C1396B1855469200D9D456 /* lambert_east-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139041855469200D9D456 /* lambert_east-sunday.csv */; };
+		14C1396C1855469200D9D456 /* lambert_main-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139051855469200D9D456 /* lambert_main-mf.csv */; };
+		14C1396D1855469200D9D456 /* lambert_main-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139061855469200D9D456 /* lambert_main-saturday.csv */; };
+		14C1396E1855469200D9D456 /* lambert_main-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139071855469200D9D456 /* lambert_main-sunday.csv */; };
+		14C1396F1855469200D9D456 /* maplewood-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139081855469200D9D456 /* maplewood-mf.csv */; };
+		14C139701855469200D9D456 /* maplewood-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139091855469200D9D456 /* maplewood-saturday.csv */; };
+		14C139711855469200D9D456 /* maplewood-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1390A1855469200D9D456 /* maplewood-sunday.csv */; };
+		14C139721855469200D9D456 /* memorial_hospital-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1390B1855469200D9D456 /* memorial_hospital-mf.csv */; };
+		14C139731855469200D9D456 /* memorial_hospital-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1390C1855469200D9D456 /* memorial_hospital-saturday.csv */; };
+		14C139741855469200D9D456 /* memorial_hospital-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1390D1855469200D9D456 /* memorial_hospital-sunday.csv */; };
+		14C139751855469200D9D456 /* north_hanley-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1390E1855469200D9D456 /* north_hanley-mf.csv */; };
+		14C139761855469200D9D456 /* north_hanley-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1390F1855469200D9D456 /* north_hanley-saturday.csv */; };
+		14C139771855469200D9D456 /* north_hanley-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139101855469200D9D456 /* north_hanley-sunday.csv */; };
+		14C1397B1855469200D9D456 /* rock_road-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139141855469200D9D456 /* rock_road-mf.csv */; };
+		14C1397C1855469200D9D456 /* rock_road-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139151855469200D9D456 /* rock_road-saturday.csv */; };
+		14C1397D1855469200D9D456 /* rock_road-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139161855469200D9D456 /* rock_road-sunday.csv */; };
+		14C1397E1855469200D9D456 /* shiloh_scott-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139171855469200D9D456 /* shiloh_scott-mf.csv */; };
+		14C1397F1855469200D9D456 /* shrewsbury-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139181855469200D9D456 /* shrewsbury-mf.csv */; };
+		14C139801855469200D9D456 /* shrewsbury-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139191855469200D9D456 /* shrewsbury-saturday.csv */; };
+		14C139811855469200D9D456 /* shrewsbury-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1391A1855469200D9D456 /* shrewsbury-sunday.csv */; };
+		14C139821855469200D9D456 /* skinker-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1391B1855469200D9D456 /* skinker-mf.csv */; };
+		14C139831855469200D9D456 /* skinker-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1391C1855469200D9D456 /* skinker-saturday.csv */; };
+		14C139841855469200D9D456 /* skinker-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1391D1855469200D9D456 /* skinker-sunday.csv */; };
+		14C139851855469200D9D456 /* stadium-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1391E1855469200D9D456 /* stadium-mf.csv */; };
+		14C139861855469200D9D456 /* stadium-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1391F1855469200D9D456 /* stadium-saturday.csv */; };
+		14C139871855469200D9D456 /* stadium-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139201855469200D9D456 /* stadium-sunday.csv */; };
+		14C139881855469200D9D456 /* sunnen-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139211855469200D9D456 /* sunnen-mf.csv */; };
+		14C139891855469200D9D456 /* sunnen-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139221855469200D9D456 /* sunnen-saturday.csv */; };
+		14C1398A1855469200D9D456 /* sunnen-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139231855469200D9D456 /* sunnen-sunday.csv */; };
+		14C1398B1855469200D9D456 /* swansea-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139241855469200D9D456 /* swansea-mf.csv */; };
+		14C1398C1855469200D9D456 /* swansea-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139251855469200D9D456 /* swansea-saturday.csv */; };
+		14C1398D1855469200D9D456 /* swansea-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139261855469200D9D456 /* swansea-sunday.csv */; };
+		14C1398E1855469200D9D456 /* umsl_north-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139271855469200D9D456 /* umsl_north-mf.csv */; };
+		14C1398F1855469200D9D456 /* umsl_north-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139281855469200D9D456 /* umsl_north-saturday.csv */; };
+		14C139901855469200D9D456 /* umsl_north-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139291855469200D9D456 /* umsl_north-sunday.csv */; };
+		14C139911855469200D9D456 /* umsl_south-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1392A1855469200D9D456 /* umsl_south-mf.csv */; };
+		14C139921855469200D9D456 /* umsl_south-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1392B1855469200D9D456 /* umsl_south-saturday.csv */; };
+		14C139931855469200D9D456 /* umsl_south-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1392C1855469200D9D456 /* umsl_south-sunday.csv */; };
+		14C139941855469200D9D456 /* union_station-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1392D1855469200D9D456 /* union_station-mf.csv */; };
+		14C139951855469200D9D456 /* union_station-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1392E1855469200D9D456 /* union_station-saturday.csv */; };
+		14C139961855469200D9D456 /* union_station-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C1392F1855469200D9D456 /* union_station-sunday.csv */; };
+		14C139971855469200D9D456 /* washington_park-mf.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139301855469200D9D456 /* washington_park-mf.csv */; };
+		14C139981855469200D9D456 /* washington_park-saturday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139311855469200D9D456 /* washington_park-saturday.csv */; };
+		14C139991855469200D9D456 /* washington_park-sunday.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14C139321855469200D9D456 /* washington_park-sunday.csv */; };
 		14EE0700182C959C00EBA22F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1452795917FBBF7800AC912F /* CoreLocation.framework */; };
-		14EE0785182CAC5500EBA22F /* 5th_missouri.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0762182CAC5400EBA22F /* 5th_missouri.csv */; };
-		14EE0786182CAC5500EBA22F /* 8th_pine.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0763182CAC5400EBA22F /* 8th_pine.csv */; };
-		14EE0787182CAC5500EBA22F /* arch_lacledes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0764182CAC5400EBA22F /* arch_lacledes.csv */; };
-		14EE0788182CAC5500EBA22F /* belleville.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0765182CAC5400EBA22F /* belleville.csv */; };
-		14EE0789182CAC5500EBA22F /* brentwood.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0766182CAC5400EBA22F /* brentwood.csv */; };
-		14EE078A182CAC5500EBA22F /* central_west_end.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0767182CAC5400EBA22F /* central_west_end.csv */; };
-		14EE078B182CAC5500EBA22F /* civic_center.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0768182CAC5400EBA22F /* civic_center.csv */; };
-		14EE078C182CAC5500EBA22F /* clayton.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0769182CAC5400EBA22F /* clayton.csv */; };
-		14EE078D182CAC5500EBA22F /* college.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE076A182CAC5400EBA22F /* college.csv */; };
-		14EE078E182CAC5500EBA22F /* convention_center.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE076B182CAC5400EBA22F /* convention_center.csv */; };
-		14EE078F182CAC5500EBA22F /* delmar.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE076C182CAC5400EBA22F /* delmar.csv */; };
-		14EE0790182CAC5500EBA22F /* east_riverfront.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE076D182CAC5400EBA22F /* east_riverfront.csv */; };
-		14EE0791182CAC5500EBA22F /* emerson_park.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE076E182CAC5400EBA22F /* emerson_park.csv */; };
-		14EE0792182CAC5500EBA22F /* fairview_heights.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE076F182CAC5400EBA22F /* fairview_heights.csv */; };
-		14EE0793182CAC5500EBA22F /* forest_park.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0770182CAC5400EBA22F /* forest_park.csv */; };
-		14EE0794182CAC5500EBA22F /* forsyth.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0771182CAC5400EBA22F /* forsyth.csv */; };
-		14EE0795182CAC5500EBA22F /* grand.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0772182CAC5400EBA22F /* grand.csv */; };
-		14EE0796182CAC5500EBA22F /* jjk_center.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0773182CAC5400EBA22F /* jjk_center.csv */; };
-		14EE0797182CAC5500EBA22F /* lambert_east.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0774182CAC5400EBA22F /* lambert_east.csv */; };
-		14EE0798182CAC5500EBA22F /* lambert_main.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0775182CAC5400EBA22F /* lambert_main.csv */; };
-		14EE0799182CAC5500EBA22F /* maplewood.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0776182CAC5400EBA22F /* maplewood.csv */; };
-		14EE079A182CAC5500EBA22F /* memorial_hospital.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0777182CAC5400EBA22F /* memorial_hospital.csv */; };
-		14EE079B182CAC5500EBA22F /* north_hanley.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0778182CAC5400EBA22F /* north_hanley.csv */; };
-		14EE079C182CAC5500EBA22F /* richmond_heights.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0779182CAC5400EBA22F /* richmond_heights.csv */; };
-		14EE079D182CAC5500EBA22F /* rockroad.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE077A182CAC5400EBA22F /* rockroad.csv */; };
-		14EE079E182CAC5500EBA22F /* shiloh_scott.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE077B182CAC5400EBA22F /* shiloh_scott.csv */; };
-		14EE079F182CAC5500EBA22F /* skinker.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE077C182CAC5400EBA22F /* skinker.csv */; };
-		14EE07A0182CAC5500EBA22F /* stadium.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE077D182CAC5400EBA22F /* stadium.csv */; };
-		14EE07A1182CAC5500EBA22F /* sunnen.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE077E182CAC5500EBA22F /* sunnen.csv */; };
-		14EE07A2182CAC5500EBA22F /* swansea.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE077F182CAC5500EBA22F /* swansea.csv */; };
-		14EE07A3182CAC5500EBA22F /* umsl_north.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0780182CAC5500EBA22F /* umsl_north.csv */; };
-		14EE07A4182CAC5500EBA22F /* umsl_south.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0781182CAC5500EBA22F /* umsl_south.csv */; };
-		14EE07A5182CAC5500EBA22F /* union_station.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0782182CAC5500EBA22F /* union_station.csv */; };
-		14EE07A6182CAC5500EBA22F /* washington_park.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0783182CAC5500EBA22F /* washington_park.csv */; };
-		14EE07A7182CAC5500EBA22F /* wellston.csv in Resources */ = {isa = PBXBuildFile; fileRef = 14EE0784182CAC5500EBA22F /* wellston.csv */; };
 		14EE091A1831C50700EBA22F /* NextMetroStationStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE09191831C50700EBA22F /* NextMetroStationStore.m */; };
 		14EE091D1831C77900EBA22F /* NextMetroStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE091C1831C77900EBA22F /* NextMetroStation.m */; };
 		14EE09201831CAD100EBA22F /* NextMetroTrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EE091F1831CAD100EBA22F /* NextMetroTrain.m */; };
@@ -82,6 +156,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1428F89E18753A4700F1D25A /* stations.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stations.csv; path = ../../../../Data/metrolinkData/stations.csv; sourceTree = "<group>"; };
 		143E6E9017F528BE00FCC26C /* NextMetroSTL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextMetroSTL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		143E6E9317F528BE00FCC26C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		143E6E9517F528BE00FCC26C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,45 +181,123 @@
 		143E6EC417F528BE00FCC26C /* NextMetroSTLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextMetroSTLTests.m; sourceTree = "<group>"; };
 		143E6ECE17FA6DAD00FCC26C /* music_noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = music_noise.wav; path = "../../../../../../Dropbox/Archive/ess/audiology-sentence-test-tool/wavs/music_noise.wav"; sourceTree = "<group>"; };
 		143E6ED017FA73FF00FCC26C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		143E6ED217FA7E5900FCC26C /* shrewsbury.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shrewsbury.csv; path = ../../../../Data/metrolinkData/shrewsbury.csv; sourceTree = "<group>"; };
 		1452795917FBBF7800AC912F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		1452795B17FBC94B00AC912F /* stations.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stations.csv; path = ../../../../Data/metrolinkData/stations.csv; sourceTree = "<group>"; };
+		14770CCC1842A67B00BC8E58 /* NextMetroTrailTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroTrailTests.h; sourceTree = "<group>"; };
+		14770CCD1842A67B00BC8E58 /* NextMetroTrailTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroTrailTests.m; sourceTree = "<group>"; };
+		14770CCF1842DCA300BC8E58 /* NSDate+NSDateMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSDateMock.h"; sourceTree = "<group>"; };
+		14770CD01842DCA300BC8E58 /* NSDate+NSDateMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSDateMock.m"; sourceTree = "<group>"; };
+		14770CD21842E04500BC8E58 /* NextMetroSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroSwizzle.h; sourceTree = "<group>"; };
+		14770CD31842E04500BC8E58 /* NextMetroSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroSwizzle.m; sourceTree = "<group>"; };
+		14770CD51844159D00BC8E58 /* NextMetroReminderStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroReminderStore.h; sourceTree = "<group>"; };
+		14770CD61844159D00BC8E58 /* NextMetroReminderStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroReminderStore.m; sourceTree = "<group>"; };
+		14770CD8184418F300BC8E58 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		14A352C518596754004D149E /* NextMetroUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroUtil.h; sourceTree = "<group>"; };
+		14A352C618596754004D149E /* NextMetroUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroUtil.m; sourceTree = "<group>"; };
+		14A352CB185971E8004D149E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		14A352DE1865CBE3004D149E /* richmond_heights-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "richmond_heights-mf.csv"; path = "../../../../Data/metrolinkData/gen/richmond_heights-mf.csv"; sourceTree = "<group>"; };
+		14A352DF1865CBE3004D149E /* richmond_heights-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "richmond_heights-saturday.csv"; path = "../../../../Data/metrolinkData/gen/richmond_heights-saturday.csv"; sourceTree = "<group>"; };
+		14A352E01865CBE3004D149E /* richmond_heights-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "richmond_heights-sunday.csv"; path = "../../../../Data/metrolinkData/gen/richmond_heights-sunday.csv"; sourceTree = "<group>"; };
 		14BBD44D18334FA000A351F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = ../../../iOS/PhotoScroller/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		14EE0762182CAC5400EBA22F /* 5th_missouri.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 5th_missouri.csv; path = ../../../../Data/metrolinkData/5th_missouri.csv; sourceTree = "<group>"; };
-		14EE0763182CAC5400EBA22F /* 8th_pine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 8th_pine.csv; path = ../../../../Data/metrolinkData/8th_pine.csv; sourceTree = "<group>"; };
-		14EE0764182CAC5400EBA22F /* arch_lacledes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = arch_lacledes.csv; path = ../../../../Data/metrolinkData/arch_lacledes.csv; sourceTree = "<group>"; };
-		14EE0765182CAC5400EBA22F /* belleville.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = belleville.csv; path = ../../../../Data/metrolinkData/belleville.csv; sourceTree = "<group>"; };
-		14EE0766182CAC5400EBA22F /* brentwood.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = brentwood.csv; path = ../../../../Data/metrolinkData/brentwood.csv; sourceTree = "<group>"; };
-		14EE0767182CAC5400EBA22F /* central_west_end.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = central_west_end.csv; path = ../../../../Data/metrolinkData/central_west_end.csv; sourceTree = "<group>"; };
-		14EE0768182CAC5400EBA22F /* civic_center.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = civic_center.csv; path = ../../../../Data/metrolinkData/civic_center.csv; sourceTree = "<group>"; };
-		14EE0769182CAC5400EBA22F /* clayton.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = clayton.csv; path = ../../../../Data/metrolinkData/clayton.csv; sourceTree = "<group>"; };
-		14EE076A182CAC5400EBA22F /* college.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = college.csv; path = ../../../../Data/metrolinkData/college.csv; sourceTree = "<group>"; };
-		14EE076B182CAC5400EBA22F /* convention_center.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = convention_center.csv; path = ../../../../Data/metrolinkData/convention_center.csv; sourceTree = "<group>"; };
-		14EE076C182CAC5400EBA22F /* delmar.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = delmar.csv; path = ../../../../Data/metrolinkData/delmar.csv; sourceTree = "<group>"; };
-		14EE076D182CAC5400EBA22F /* east_riverfront.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = east_riverfront.csv; path = ../../../../Data/metrolinkData/east_riverfront.csv; sourceTree = "<group>"; };
-		14EE076E182CAC5400EBA22F /* emerson_park.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = emerson_park.csv; path = ../../../../Data/metrolinkData/emerson_park.csv; sourceTree = "<group>"; };
-		14EE076F182CAC5400EBA22F /* fairview_heights.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fairview_heights.csv; path = ../../../../Data/metrolinkData/fairview_heights.csv; sourceTree = "<group>"; };
-		14EE0770182CAC5400EBA22F /* forest_park.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = forest_park.csv; path = ../../../../Data/metrolinkData/forest_park.csv; sourceTree = "<group>"; };
-		14EE0771182CAC5400EBA22F /* forsyth.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = forsyth.csv; path = ../../../../Data/metrolinkData/forsyth.csv; sourceTree = "<group>"; };
-		14EE0772182CAC5400EBA22F /* grand.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = grand.csv; path = ../../../../Data/metrolinkData/grand.csv; sourceTree = "<group>"; };
-		14EE0773182CAC5400EBA22F /* jjk_center.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = jjk_center.csv; path = ../../../../Data/metrolinkData/jjk_center.csv; sourceTree = "<group>"; };
-		14EE0774182CAC5400EBA22F /* lambert_east.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lambert_east.csv; path = ../../../../Data/metrolinkData/lambert_east.csv; sourceTree = "<group>"; };
-		14EE0775182CAC5400EBA22F /* lambert_main.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lambert_main.csv; path = ../../../../Data/metrolinkData/lambert_main.csv; sourceTree = "<group>"; };
-		14EE0776182CAC5400EBA22F /* maplewood.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = maplewood.csv; path = ../../../../Data/metrolinkData/maplewood.csv; sourceTree = "<group>"; };
-		14EE0777182CAC5400EBA22F /* memorial_hospital.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = memorial_hospital.csv; path = ../../../../Data/metrolinkData/memorial_hospital.csv; sourceTree = "<group>"; };
-		14EE0778182CAC5400EBA22F /* north_hanley.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = north_hanley.csv; path = ../../../../Data/metrolinkData/north_hanley.csv; sourceTree = "<group>"; };
-		14EE0779182CAC5400EBA22F /* richmond_heights.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = richmond_heights.csv; path = ../../../../Data/metrolinkData/richmond_heights.csv; sourceTree = "<group>"; };
-		14EE077A182CAC5400EBA22F /* rockroad.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = rockroad.csv; path = ../../../../Data/metrolinkData/rockroad.csv; sourceTree = "<group>"; };
-		14EE077B182CAC5400EBA22F /* shiloh_scott.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shiloh_scott.csv; path = ../../../../Data/metrolinkData/shiloh_scott.csv; sourceTree = "<group>"; };
-		14EE077C182CAC5400EBA22F /* skinker.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = skinker.csv; path = ../../../../Data/metrolinkData/skinker.csv; sourceTree = "<group>"; };
-		14EE077D182CAC5400EBA22F /* stadium.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stadium.csv; path = ../../../../Data/metrolinkData/stadium.csv; sourceTree = "<group>"; };
-		14EE077E182CAC5500EBA22F /* sunnen.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sunnen.csv; path = ../../../../Data/metrolinkData/sunnen.csv; sourceTree = "<group>"; };
-		14EE077F182CAC5500EBA22F /* swansea.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = swansea.csv; path = ../../../../Data/metrolinkData/swansea.csv; sourceTree = "<group>"; };
-		14EE0780182CAC5500EBA22F /* umsl_north.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = umsl_north.csv; path = ../../../../Data/metrolinkData/umsl_north.csv; sourceTree = "<group>"; };
-		14EE0781182CAC5500EBA22F /* umsl_south.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = umsl_south.csv; path = ../../../../Data/metrolinkData/umsl_south.csv; sourceTree = "<group>"; };
-		14EE0782182CAC5500EBA22F /* union_station.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = union_station.csv; path = ../../../../Data/metrolinkData/union_station.csv; sourceTree = "<group>"; };
-		14EE0783182CAC5500EBA22F /* washington_park.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = washington_park.csv; path = ../../../../Data/metrolinkData/washington_park.csv; sourceTree = "<group>"; };
-		14EE0784182CAC5500EBA22F /* wellston.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wellston.csv; path = ../../../../Data/metrolinkData/wellston.csv; sourceTree = "<group>"; };
+		14C138CC1855469200D9D456 /* 5th_missouri-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "5th_missouri-mf.csv"; path = "../../../../Data/metrolinkData/gen/5th_missouri-mf.csv"; sourceTree = "<group>"; };
+		14C138CD1855469200D9D456 /* 5th_missouri-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "5th_missouri-saturday.csv"; path = "../../../../Data/metrolinkData/gen/5th_missouri-saturday.csv"; sourceTree = "<group>"; };
+		14C138CE1855469200D9D456 /* 5th_missouri-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "5th_missouri-sunday.csv"; path = "../../../../Data/metrolinkData/gen/5th_missouri-sunday.csv"; sourceTree = "<group>"; };
+		14C138CF1855469200D9D456 /* 8th_pine-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "8th_pine-mf.csv"; path = "../../../../Data/metrolinkData/gen/8th_pine-mf.csv"; sourceTree = "<group>"; };
+		14C138D01855469200D9D456 /* 8th_pine-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "8th_pine-saturday.csv"; path = "../../../../Data/metrolinkData/gen/8th_pine-saturday.csv"; sourceTree = "<group>"; };
+		14C138D11855469200D9D456 /* 8th_pine-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "8th_pine-sunday.csv"; path = "../../../../Data/metrolinkData/gen/8th_pine-sunday.csv"; sourceTree = "<group>"; };
+		14C138D21855469200D9D456 /* arch_lacledes-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "arch_lacledes-mf.csv"; path = "../../../../Data/metrolinkData/gen/arch_lacledes-mf.csv"; sourceTree = "<group>"; };
+		14C138D31855469200D9D456 /* arch_lacledes-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "arch_lacledes-saturday.csv"; path = "../../../../Data/metrolinkData/gen/arch_lacledes-saturday.csv"; sourceTree = "<group>"; };
+		14C138D41855469200D9D456 /* arch_lacledes-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "arch_lacledes-sunday.csv"; path = "../../../../Data/metrolinkData/gen/arch_lacledes-sunday.csv"; sourceTree = "<group>"; };
+		14C138D51855469200D9D456 /* belleville-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "belleville-mf.csv"; path = "../../../../Data/metrolinkData/gen/belleville-mf.csv"; sourceTree = "<group>"; };
+		14C138D61855469200D9D456 /* belleville-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "belleville-saturday.csv"; path = "../../../../Data/metrolinkData/gen/belleville-saturday.csv"; sourceTree = "<group>"; };
+		14C138D71855469200D9D456 /* belleville-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "belleville-sunday.csv"; path = "../../../../Data/metrolinkData/gen/belleville-sunday.csv"; sourceTree = "<group>"; };
+		14C138D81855469200D9D456 /* brentwood-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "brentwood-mf.csv"; path = "../../../../Data/metrolinkData/gen/brentwood-mf.csv"; sourceTree = "<group>"; };
+		14C138D91855469200D9D456 /* brentwood-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "brentwood-saturday.csv"; path = "../../../../Data/metrolinkData/gen/brentwood-saturday.csv"; sourceTree = "<group>"; };
+		14C138DA1855469200D9D456 /* brentwood-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "brentwood-sunday.csv"; path = "../../../../Data/metrolinkData/gen/brentwood-sunday.csv"; sourceTree = "<group>"; };
+		14C138DB1855469200D9D456 /* central_west_end-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "central_west_end-mf.csv"; path = "../../../../Data/metrolinkData/gen/central_west_end-mf.csv"; sourceTree = "<group>"; };
+		14C138DC1855469200D9D456 /* central_west_end-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "central_west_end-saturday.csv"; path = "../../../../Data/metrolinkData/gen/central_west_end-saturday.csv"; sourceTree = "<group>"; };
+		14C138DD1855469200D9D456 /* central_west_end-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "central_west_end-sunday.csv"; path = "../../../../Data/metrolinkData/gen/central_west_end-sunday.csv"; sourceTree = "<group>"; };
+		14C138DE1855469200D9D456 /* civic_center-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "civic_center-mf.csv"; path = "../../../../Data/metrolinkData/gen/civic_center-mf.csv"; sourceTree = "<group>"; };
+		14C138DF1855469200D9D456 /* civic_center-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "civic_center-saturday.csv"; path = "../../../../Data/metrolinkData/gen/civic_center-saturday.csv"; sourceTree = "<group>"; };
+		14C138E01855469200D9D456 /* civic_center-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "civic_center-sunday.csv"; path = "../../../../Data/metrolinkData/gen/civic_center-sunday.csv"; sourceTree = "<group>"; };
+		14C138E11855469200D9D456 /* clayton-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "clayton-mf.csv"; path = "../../../../Data/metrolinkData/gen/clayton-mf.csv"; sourceTree = "<group>"; };
+		14C138E21855469200D9D456 /* clayton-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "clayton-saturday.csv"; path = "../../../../Data/metrolinkData/gen/clayton-saturday.csv"; sourceTree = "<group>"; };
+		14C138E31855469200D9D456 /* clayton-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "clayton-sunday.csv"; path = "../../../../Data/metrolinkData/gen/clayton-sunday.csv"; sourceTree = "<group>"; };
+		14C138E41855469200D9D456 /* college-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "college-mf.csv"; path = "../../../../Data/metrolinkData/gen/college-mf.csv"; sourceTree = "<group>"; };
+		14C138E51855469200D9D456 /* college-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "college-saturday.csv"; path = "../../../../Data/metrolinkData/gen/college-saturday.csv"; sourceTree = "<group>"; };
+		14C138E61855469200D9D456 /* college-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "college-sunday.csv"; path = "../../../../Data/metrolinkData/gen/college-sunday.csv"; sourceTree = "<group>"; };
+		14C138E71855469200D9D456 /* convention_center-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "convention_center-mf.csv"; path = "../../../../Data/metrolinkData/gen/convention_center-mf.csv"; sourceTree = "<group>"; };
+		14C138E81855469200D9D456 /* convention_center-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "convention_center-saturday.csv"; path = "../../../../Data/metrolinkData/gen/convention_center-saturday.csv"; sourceTree = "<group>"; };
+		14C138E91855469200D9D456 /* convention_center-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "convention_center-sunday.csv"; path = "../../../../Data/metrolinkData/gen/convention_center-sunday.csv"; sourceTree = "<group>"; };
+		14C138EA1855469200D9D456 /* delmar-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "delmar-mf.csv"; path = "../../../../Data/metrolinkData/gen/delmar-mf.csv"; sourceTree = "<group>"; };
+		14C138EB1855469200D9D456 /* delmar-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "delmar-saturday.csv"; path = "../../../../Data/metrolinkData/gen/delmar-saturday.csv"; sourceTree = "<group>"; };
+		14C138EC1855469200D9D456 /* delmar-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "delmar-sunday.csv"; path = "../../../../Data/metrolinkData/gen/delmar-sunday.csv"; sourceTree = "<group>"; };
+		14C138ED1855469200D9D456 /* east_riverfront-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "east_riverfront-mf.csv"; path = "../../../../Data/metrolinkData/gen/east_riverfront-mf.csv"; sourceTree = "<group>"; };
+		14C138EE1855469200D9D456 /* east_riverfront-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "east_riverfront-saturday.csv"; path = "../../../../Data/metrolinkData/gen/east_riverfront-saturday.csv"; sourceTree = "<group>"; };
+		14C138EF1855469200D9D456 /* east_riverfront-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "east_riverfront-sunday.csv"; path = "../../../../Data/metrolinkData/gen/east_riverfront-sunday.csv"; sourceTree = "<group>"; };
+		14C138F01855469200D9D456 /* emerson_park-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "emerson_park-mf.csv"; path = "../../../../Data/metrolinkData/gen/emerson_park-mf.csv"; sourceTree = "<group>"; };
+		14C138F11855469200D9D456 /* emerson_park-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "emerson_park-saturday.csv"; path = "../../../../Data/metrolinkData/gen/emerson_park-saturday.csv"; sourceTree = "<group>"; };
+		14C138F21855469200D9D456 /* emerson_park-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "emerson_park-sunday.csv"; path = "../../../../Data/metrolinkData/gen/emerson_park-sunday.csv"; sourceTree = "<group>"; };
+		14C138F31855469200D9D456 /* fairview_heights-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "fairview_heights-mf.csv"; path = "../../../../Data/metrolinkData/gen/fairview_heights-mf.csv"; sourceTree = "<group>"; };
+		14C138F41855469200D9D456 /* fairview_heights-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "fairview_heights-saturday.csv"; path = "../../../../Data/metrolinkData/gen/fairview_heights-saturday.csv"; sourceTree = "<group>"; };
+		14C138F51855469200D9D456 /* fairview_heights-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "fairview_heights-sunday.csv"; path = "../../../../Data/metrolinkData/gen/fairview_heights-sunday.csv"; sourceTree = "<group>"; };
+		14C138F61855469200D9D456 /* forest_park-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "forest_park-mf.csv"; path = "../../../../Data/metrolinkData/gen/forest_park-mf.csv"; sourceTree = "<group>"; };
+		14C138F71855469200D9D456 /* forest_park-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "forest_park-saturday.csv"; path = "../../../../Data/metrolinkData/gen/forest_park-saturday.csv"; sourceTree = "<group>"; };
+		14C138F81855469200D9D456 /* forest_park-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "forest_park-sunday.csv"; path = "../../../../Data/metrolinkData/gen/forest_park-sunday.csv"; sourceTree = "<group>"; };
+		14C138F91855469200D9D456 /* forsyth-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "forsyth-mf.csv"; path = "../../../../Data/metrolinkData/gen/forsyth-mf.csv"; sourceTree = "<group>"; };
+		14C138FA1855469200D9D456 /* forsyth-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "forsyth-saturday.csv"; path = "../../../../Data/metrolinkData/gen/forsyth-saturday.csv"; sourceTree = "<group>"; };
+		14C138FB1855469200D9D456 /* forsyth-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "forsyth-sunday.csv"; path = "../../../../Data/metrolinkData/gen/forsyth-sunday.csv"; sourceTree = "<group>"; };
+		14C138FC1855469200D9D456 /* grand-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "grand-mf.csv"; path = "../../../../Data/metrolinkData/gen/grand-mf.csv"; sourceTree = "<group>"; };
+		14C138FD1855469200D9D456 /* grand-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "grand-saturday.csv"; path = "../../../../Data/metrolinkData/gen/grand-saturday.csv"; sourceTree = "<group>"; };
+		14C138FE1855469200D9D456 /* grand-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "grand-sunday.csv"; path = "../../../../Data/metrolinkData/gen/grand-sunday.csv"; sourceTree = "<group>"; };
+		14C138FF1855469200D9D456 /* jjk_center-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "jjk_center-mf.csv"; path = "../../../../Data/metrolinkData/gen/jjk_center-mf.csv"; sourceTree = "<group>"; };
+		14C139001855469200D9D456 /* jjk_center-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "jjk_center-saturday.csv"; path = "../../../../Data/metrolinkData/gen/jjk_center-saturday.csv"; sourceTree = "<group>"; };
+		14C139011855469200D9D456 /* jjk_center-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "jjk_center-sunday.csv"; path = "../../../../Data/metrolinkData/gen/jjk_center-sunday.csv"; sourceTree = "<group>"; };
+		14C139021855469200D9D456 /* lambert_east-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "lambert_east-mf.csv"; path = "../../../../Data/metrolinkData/gen/lambert_east-mf.csv"; sourceTree = "<group>"; };
+		14C139031855469200D9D456 /* lambert_east-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "lambert_east-saturday.csv"; path = "../../../../Data/metrolinkData/gen/lambert_east-saturday.csv"; sourceTree = "<group>"; };
+		14C139041855469200D9D456 /* lambert_east-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "lambert_east-sunday.csv"; path = "../../../../Data/metrolinkData/gen/lambert_east-sunday.csv"; sourceTree = "<group>"; };
+		14C139051855469200D9D456 /* lambert_main-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "lambert_main-mf.csv"; path = "../../../../Data/metrolinkData/gen/lambert_main-mf.csv"; sourceTree = "<group>"; };
+		14C139061855469200D9D456 /* lambert_main-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "lambert_main-saturday.csv"; path = "../../../../Data/metrolinkData/gen/lambert_main-saturday.csv"; sourceTree = "<group>"; };
+		14C139071855469200D9D456 /* lambert_main-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "lambert_main-sunday.csv"; path = "../../../../Data/metrolinkData/gen/lambert_main-sunday.csv"; sourceTree = "<group>"; };
+		14C139081855469200D9D456 /* maplewood-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "maplewood-mf.csv"; path = "../../../../Data/metrolinkData/gen/maplewood-mf.csv"; sourceTree = "<group>"; };
+		14C139091855469200D9D456 /* maplewood-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "maplewood-saturday.csv"; path = "../../../../Data/metrolinkData/gen/maplewood-saturday.csv"; sourceTree = "<group>"; };
+		14C1390A1855469200D9D456 /* maplewood-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "maplewood-sunday.csv"; path = "../../../../Data/metrolinkData/gen/maplewood-sunday.csv"; sourceTree = "<group>"; };
+		14C1390B1855469200D9D456 /* memorial_hospital-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "memorial_hospital-mf.csv"; path = "../../../../Data/metrolinkData/gen/memorial_hospital-mf.csv"; sourceTree = "<group>"; };
+		14C1390C1855469200D9D456 /* memorial_hospital-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "memorial_hospital-saturday.csv"; path = "../../../../Data/metrolinkData/gen/memorial_hospital-saturday.csv"; sourceTree = "<group>"; };
+		14C1390D1855469200D9D456 /* memorial_hospital-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "memorial_hospital-sunday.csv"; path = "../../../../Data/metrolinkData/gen/memorial_hospital-sunday.csv"; sourceTree = "<group>"; };
+		14C1390E1855469200D9D456 /* north_hanley-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "north_hanley-mf.csv"; path = "../../../../Data/metrolinkData/gen/north_hanley-mf.csv"; sourceTree = "<group>"; };
+		14C1390F1855469200D9D456 /* north_hanley-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "north_hanley-saturday.csv"; path = "../../../../Data/metrolinkData/gen/north_hanley-saturday.csv"; sourceTree = "<group>"; };
+		14C139101855469200D9D456 /* north_hanley-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "north_hanley-sunday.csv"; path = "../../../../Data/metrolinkData/gen/north_hanley-sunday.csv"; sourceTree = "<group>"; };
+		14C139141855469200D9D456 /* rock_road-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "rock_road-mf.csv"; path = "../../../../Data/metrolinkData/gen/rock_road-mf.csv"; sourceTree = "<group>"; };
+		14C139151855469200D9D456 /* rock_road-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "rock_road-saturday.csv"; path = "../../../../Data/metrolinkData/gen/rock_road-saturday.csv"; sourceTree = "<group>"; };
+		14C139161855469200D9D456 /* rock_road-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "rock_road-sunday.csv"; path = "../../../../Data/metrolinkData/gen/rock_road-sunday.csv"; sourceTree = "<group>"; };
+		14C139171855469200D9D456 /* shiloh_scott-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "shiloh_scott-mf.csv"; path = "../../../../Data/metrolinkData/gen/shiloh_scott-mf.csv"; sourceTree = "<group>"; };
+		14C139181855469200D9D456 /* shrewsbury-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "shrewsbury-mf.csv"; path = "../../../../Data/metrolinkData/gen/shrewsbury-mf.csv"; sourceTree = "<group>"; };
+		14C139191855469200D9D456 /* shrewsbury-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "shrewsbury-saturday.csv"; path = "../../../../Data/metrolinkData/gen/shrewsbury-saturday.csv"; sourceTree = "<group>"; };
+		14C1391A1855469200D9D456 /* shrewsbury-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "shrewsbury-sunday.csv"; path = "../../../../Data/metrolinkData/gen/shrewsbury-sunday.csv"; sourceTree = "<group>"; };
+		14C1391B1855469200D9D456 /* skinker-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "skinker-mf.csv"; path = "../../../../Data/metrolinkData/gen/skinker-mf.csv"; sourceTree = "<group>"; };
+		14C1391C1855469200D9D456 /* skinker-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "skinker-saturday.csv"; path = "../../../../Data/metrolinkData/gen/skinker-saturday.csv"; sourceTree = "<group>"; };
+		14C1391D1855469200D9D456 /* skinker-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "skinker-sunday.csv"; path = "../../../../Data/metrolinkData/gen/skinker-sunday.csv"; sourceTree = "<group>"; };
+		14C1391E1855469200D9D456 /* stadium-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "stadium-mf.csv"; path = "../../../../Data/metrolinkData/gen/stadium-mf.csv"; sourceTree = "<group>"; };
+		14C1391F1855469200D9D456 /* stadium-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "stadium-saturday.csv"; path = "../../../../Data/metrolinkData/gen/stadium-saturday.csv"; sourceTree = "<group>"; };
+		14C139201855469200D9D456 /* stadium-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "stadium-sunday.csv"; path = "../../../../Data/metrolinkData/gen/stadium-sunday.csv"; sourceTree = "<group>"; };
+		14C139211855469200D9D456 /* sunnen-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "sunnen-mf.csv"; path = "../../../../Data/metrolinkData/gen/sunnen-mf.csv"; sourceTree = "<group>"; };
+		14C139221855469200D9D456 /* sunnen-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "sunnen-saturday.csv"; path = "../../../../Data/metrolinkData/gen/sunnen-saturday.csv"; sourceTree = "<group>"; };
+		14C139231855469200D9D456 /* sunnen-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "sunnen-sunday.csv"; path = "../../../../Data/metrolinkData/gen/sunnen-sunday.csv"; sourceTree = "<group>"; };
+		14C139241855469200D9D456 /* swansea-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "swansea-mf.csv"; path = "../../../../Data/metrolinkData/gen/swansea-mf.csv"; sourceTree = "<group>"; };
+		14C139251855469200D9D456 /* swansea-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "swansea-saturday.csv"; path = "../../../../Data/metrolinkData/gen/swansea-saturday.csv"; sourceTree = "<group>"; };
+		14C139261855469200D9D456 /* swansea-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "swansea-sunday.csv"; path = "../../../../Data/metrolinkData/gen/swansea-sunday.csv"; sourceTree = "<group>"; };
+		14C139271855469200D9D456 /* umsl_north-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "umsl_north-mf.csv"; path = "../../../../Data/metrolinkData/gen/umsl_north-mf.csv"; sourceTree = "<group>"; };
+		14C139281855469200D9D456 /* umsl_north-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "umsl_north-saturday.csv"; path = "../../../../Data/metrolinkData/gen/umsl_north-saturday.csv"; sourceTree = "<group>"; };
+		14C139291855469200D9D456 /* umsl_north-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "umsl_north-sunday.csv"; path = "../../../../Data/metrolinkData/gen/umsl_north-sunday.csv"; sourceTree = "<group>"; };
+		14C1392A1855469200D9D456 /* umsl_south-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "umsl_south-mf.csv"; path = "../../../../Data/metrolinkData/gen/umsl_south-mf.csv"; sourceTree = "<group>"; };
+		14C1392B1855469200D9D456 /* umsl_south-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "umsl_south-saturday.csv"; path = "../../../../Data/metrolinkData/gen/umsl_south-saturday.csv"; sourceTree = "<group>"; };
+		14C1392C1855469200D9D456 /* umsl_south-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "umsl_south-sunday.csv"; path = "../../../../Data/metrolinkData/gen/umsl_south-sunday.csv"; sourceTree = "<group>"; };
+		14C1392D1855469200D9D456 /* union_station-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "union_station-mf.csv"; path = "../../../../Data/metrolinkData/gen/union_station-mf.csv"; sourceTree = "<group>"; };
+		14C1392E1855469200D9D456 /* union_station-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "union_station-saturday.csv"; path = "../../../../Data/metrolinkData/gen/union_station-saturday.csv"; sourceTree = "<group>"; };
+		14C1392F1855469200D9D456 /* union_station-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "union_station-sunday.csv"; path = "../../../../Data/metrolinkData/gen/union_station-sunday.csv"; sourceTree = "<group>"; };
+		14C139301855469200D9D456 /* washington_park-mf.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "washington_park-mf.csv"; path = "../../../../Data/metrolinkData/gen/washington_park-mf.csv"; sourceTree = "<group>"; };
+		14C139311855469200D9D456 /* washington_park-saturday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "washington_park-saturday.csv"; path = "../../../../Data/metrolinkData/gen/washington_park-saturday.csv"; sourceTree = "<group>"; };
+		14C139321855469200D9D456 /* washington_park-sunday.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "washington_park-sunday.csv"; path = "../../../../Data/metrolinkData/gen/washington_park-sunday.csv"; sourceTree = "<group>"; };
 		14EE09181831C50700EBA22F /* NextMetroStationStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroStationStore.h; sourceTree = "<group>"; };
 		14EE09191831C50700EBA22F /* NextMetroStationStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroStationStore.m; sourceTree = "<group>"; };
 		14EE091B1831C77900EBA22F /* NextMetroStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroStation.h; sourceTree = "<group>"; };
@@ -158,6 +311,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A352CC185971E8004D149E /* QuartzCore.framework in Frameworks */,
+				14770CDA1844193D00BC8E58 /* EventKit.framework in Frameworks */,
 				1452795A17FBBF7800AC912F /* CoreLocation.framework in Frameworks */,
 				143E6ED117FA73FF00FCC26C /* AudioToolbox.framework in Frameworks */,
 				143E6E9417F528BE00FCC26C /* UIKit.framework in Frameworks */,
@@ -184,6 +339,7 @@
 		143E6E8717F528BE00FCC26C = {
 			isa = PBXGroup;
 			children = (
+				14770CD8184418F300BC8E58 /* EventKit.framework */,
 				1452795917FBBF7800AC912F /* CoreLocation.framework */,
 				143E6ED017FA73FF00FCC26C /* AudioToolbox.framework */,
 				143E6E9917F528BE00FCC26C /* NextMetroSTL */,
@@ -205,6 +361,7 @@
 		143E6E9217F528BE00FCC26C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14A352CB185971E8004D149E /* QuartzCore.framework */,
 				143E6E9317F528BE00FCC26C /* UIKit.framework */,
 				143E6E9517F528BE00FCC26C /* Foundation.framework */,
 				143E6E9717F528BE00FCC26C /* CoreGraphics.framework */,
@@ -228,6 +385,10 @@
 				14EE091C1831C77900EBA22F /* NextMetroStation.m */,
 				14EE091E1831CAD100EBA22F /* NextMetroTrain.h */,
 				14EE091F1831CAD100EBA22F /* NextMetroTrain.m */,
+				14770CD51844159D00BC8E58 /* NextMetroReminderStore.h */,
+				14770CD61844159D00BC8E58 /* NextMetroReminderStore.m */,
+				14A352C518596754004D149E /* NextMetroUtil.h */,
+				14A352C618596754004D149E /* NextMetroUtil.m */,
 			);
 			path = NextMetroSTL;
 			sourceTree = "<group>";
@@ -235,44 +396,111 @@
 		143E6E9A17F528BE00FCC26C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1428F89E18753A4700F1D25A /* stations.csv */,
+				14A352DE1865CBE3004D149E /* richmond_heights-mf.csv */,
+				14A352DF1865CBE3004D149E /* richmond_heights-saturday.csv */,
+				14A352E01865CBE3004D149E /* richmond_heights-sunday.csv */,
+				14C138CC1855469200D9D456 /* 5th_missouri-mf.csv */,
+				14C138CD1855469200D9D456 /* 5th_missouri-saturday.csv */,
+				14C138CE1855469200D9D456 /* 5th_missouri-sunday.csv */,
+				14C138CF1855469200D9D456 /* 8th_pine-mf.csv */,
+				14C138D01855469200D9D456 /* 8th_pine-saturday.csv */,
+				14C138D11855469200D9D456 /* 8th_pine-sunday.csv */,
+				14C138D21855469200D9D456 /* arch_lacledes-mf.csv */,
+				14C138D31855469200D9D456 /* arch_lacledes-saturday.csv */,
+				14C138D41855469200D9D456 /* arch_lacledes-sunday.csv */,
+				14C138D51855469200D9D456 /* belleville-mf.csv */,
+				14C138D61855469200D9D456 /* belleville-saturday.csv */,
+				14C138D71855469200D9D456 /* belleville-sunday.csv */,
+				14C138D81855469200D9D456 /* brentwood-mf.csv */,
+				14C138D91855469200D9D456 /* brentwood-saturday.csv */,
+				14C138DA1855469200D9D456 /* brentwood-sunday.csv */,
+				14C138DB1855469200D9D456 /* central_west_end-mf.csv */,
+				14C138DC1855469200D9D456 /* central_west_end-saturday.csv */,
+				14C138DD1855469200D9D456 /* central_west_end-sunday.csv */,
+				14C138DE1855469200D9D456 /* civic_center-mf.csv */,
+				14C138DF1855469200D9D456 /* civic_center-saturday.csv */,
+				14C138E01855469200D9D456 /* civic_center-sunday.csv */,
+				14C138E11855469200D9D456 /* clayton-mf.csv */,
+				14C138E21855469200D9D456 /* clayton-saturday.csv */,
+				14C138E31855469200D9D456 /* clayton-sunday.csv */,
+				14C138E41855469200D9D456 /* college-mf.csv */,
+				14C138E51855469200D9D456 /* college-saturday.csv */,
+				14C138E61855469200D9D456 /* college-sunday.csv */,
+				14C138E71855469200D9D456 /* convention_center-mf.csv */,
+				14C138E81855469200D9D456 /* convention_center-saturday.csv */,
+				14C138E91855469200D9D456 /* convention_center-sunday.csv */,
+				14C138EA1855469200D9D456 /* delmar-mf.csv */,
+				14C138EB1855469200D9D456 /* delmar-saturday.csv */,
+				14C138EC1855469200D9D456 /* delmar-sunday.csv */,
+				14C138ED1855469200D9D456 /* east_riverfront-mf.csv */,
+				14C138EE1855469200D9D456 /* east_riverfront-saturday.csv */,
+				14C138EF1855469200D9D456 /* east_riverfront-sunday.csv */,
+				14C138F01855469200D9D456 /* emerson_park-mf.csv */,
+				14C138F11855469200D9D456 /* emerson_park-saturday.csv */,
+				14C138F21855469200D9D456 /* emerson_park-sunday.csv */,
+				14C138F31855469200D9D456 /* fairview_heights-mf.csv */,
+				14C138F41855469200D9D456 /* fairview_heights-saturday.csv */,
+				14C138F51855469200D9D456 /* fairview_heights-sunday.csv */,
+				14C138F61855469200D9D456 /* forest_park-mf.csv */,
+				14C138F71855469200D9D456 /* forest_park-saturday.csv */,
+				14C138F81855469200D9D456 /* forest_park-sunday.csv */,
+				14C138F91855469200D9D456 /* forsyth-mf.csv */,
+				14C138FA1855469200D9D456 /* forsyth-saturday.csv */,
+				14C138FB1855469200D9D456 /* forsyth-sunday.csv */,
+				14C138FC1855469200D9D456 /* grand-mf.csv */,
+				14C138FD1855469200D9D456 /* grand-saturday.csv */,
+				14C138FE1855469200D9D456 /* grand-sunday.csv */,
+				14C138FF1855469200D9D456 /* jjk_center-mf.csv */,
+				14C139001855469200D9D456 /* jjk_center-saturday.csv */,
+				14C139011855469200D9D456 /* jjk_center-sunday.csv */,
+				14C139021855469200D9D456 /* lambert_east-mf.csv */,
+				14C139031855469200D9D456 /* lambert_east-saturday.csv */,
+				14C139041855469200D9D456 /* lambert_east-sunday.csv */,
+				14C139051855469200D9D456 /* lambert_main-mf.csv */,
+				14C139061855469200D9D456 /* lambert_main-saturday.csv */,
+				14C139071855469200D9D456 /* lambert_main-sunday.csv */,
+				14C139081855469200D9D456 /* maplewood-mf.csv */,
+				14C139091855469200D9D456 /* maplewood-saturday.csv */,
+				14C1390A1855469200D9D456 /* maplewood-sunday.csv */,
+				14C1390B1855469200D9D456 /* memorial_hospital-mf.csv */,
+				14C1390C1855469200D9D456 /* memorial_hospital-saturday.csv */,
+				14C1390D1855469200D9D456 /* memorial_hospital-sunday.csv */,
+				14C1390E1855469200D9D456 /* north_hanley-mf.csv */,
+				14C1390F1855469200D9D456 /* north_hanley-saturday.csv */,
+				14C139101855469200D9D456 /* north_hanley-sunday.csv */,
+				14C139141855469200D9D456 /* rock_road-mf.csv */,
+				14C139151855469200D9D456 /* rock_road-saturday.csv */,
+				14C139161855469200D9D456 /* rock_road-sunday.csv */,
+				14C139171855469200D9D456 /* shiloh_scott-mf.csv */,
+				14C139181855469200D9D456 /* shrewsbury-mf.csv */,
+				14C139191855469200D9D456 /* shrewsbury-saturday.csv */,
+				14C1391A1855469200D9D456 /* shrewsbury-sunday.csv */,
+				14C1391B1855469200D9D456 /* skinker-mf.csv */,
+				14C1391C1855469200D9D456 /* skinker-saturday.csv */,
+				14C1391D1855469200D9D456 /* skinker-sunday.csv */,
+				14C1391E1855469200D9D456 /* stadium-mf.csv */,
+				14C1391F1855469200D9D456 /* stadium-saturday.csv */,
+				14C139201855469200D9D456 /* stadium-sunday.csv */,
+				14C139211855469200D9D456 /* sunnen-mf.csv */,
+				14C139221855469200D9D456 /* sunnen-saturday.csv */,
+				14C139231855469200D9D456 /* sunnen-sunday.csv */,
+				14C139241855469200D9D456 /* swansea-mf.csv */,
+				14C139251855469200D9D456 /* swansea-saturday.csv */,
+				14C139261855469200D9D456 /* swansea-sunday.csv */,
+				14C139271855469200D9D456 /* umsl_north-mf.csv */,
+				14C139281855469200D9D456 /* umsl_north-saturday.csv */,
+				14C139291855469200D9D456 /* umsl_north-sunday.csv */,
+				14C1392A1855469200D9D456 /* umsl_south-mf.csv */,
+				14C1392B1855469200D9D456 /* umsl_south-saturday.csv */,
+				14C1392C1855469200D9D456 /* umsl_south-sunday.csv */,
+				14C1392D1855469200D9D456 /* union_station-mf.csv */,
+				14C1392E1855469200D9D456 /* union_station-saturday.csv */,
+				14C1392F1855469200D9D456 /* union_station-sunday.csv */,
+				14C139301855469200D9D456 /* washington_park-mf.csv */,
+				14C139311855469200D9D456 /* washington_park-saturday.csv */,
+				14C139321855469200D9D456 /* washington_park-sunday.csv */,
 				14BBD44C18334FA000A351F4 /* MainStoryboard.storyboard */,
-				14EE0762182CAC5400EBA22F /* 5th_missouri.csv */,
-				14EE0763182CAC5400EBA22F /* 8th_pine.csv */,
-				14EE0764182CAC5400EBA22F /* arch_lacledes.csv */,
-				14EE0765182CAC5400EBA22F /* belleville.csv */,
-				14EE0766182CAC5400EBA22F /* brentwood.csv */,
-				14EE0767182CAC5400EBA22F /* central_west_end.csv */,
-				14EE0768182CAC5400EBA22F /* civic_center.csv */,
-				14EE0769182CAC5400EBA22F /* clayton.csv */,
-				14EE076A182CAC5400EBA22F /* college.csv */,
-				14EE076B182CAC5400EBA22F /* convention_center.csv */,
-				14EE076C182CAC5400EBA22F /* delmar.csv */,
-				14EE076D182CAC5400EBA22F /* east_riverfront.csv */,
-				14EE076E182CAC5400EBA22F /* emerson_park.csv */,
-				14EE076F182CAC5400EBA22F /* fairview_heights.csv */,
-				14EE0770182CAC5400EBA22F /* forest_park.csv */,
-				14EE0771182CAC5400EBA22F /* forsyth.csv */,
-				14EE0772182CAC5400EBA22F /* grand.csv */,
-				14EE0773182CAC5400EBA22F /* jjk_center.csv */,
-				14EE0774182CAC5400EBA22F /* lambert_east.csv */,
-				14EE0775182CAC5400EBA22F /* lambert_main.csv */,
-				14EE0776182CAC5400EBA22F /* maplewood.csv */,
-				14EE0777182CAC5400EBA22F /* memorial_hospital.csv */,
-				14EE0778182CAC5400EBA22F /* north_hanley.csv */,
-				14EE0779182CAC5400EBA22F /* richmond_heights.csv */,
-				14EE077A182CAC5400EBA22F /* rockroad.csv */,
-				14EE077B182CAC5400EBA22F /* shiloh_scott.csv */,
-				14EE077C182CAC5400EBA22F /* skinker.csv */,
-				14EE077D182CAC5400EBA22F /* stadium.csv */,
-				14EE077E182CAC5500EBA22F /* sunnen.csv */,
-				14EE077F182CAC5500EBA22F /* swansea.csv */,
-				14EE0780182CAC5500EBA22F /* umsl_north.csv */,
-				14EE0781182CAC5500EBA22F /* umsl_south.csv */,
-				14EE0782182CAC5500EBA22F /* union_station.csv */,
-				14EE0783182CAC5500EBA22F /* washington_park.csv */,
-				14EE0784182CAC5500EBA22F /* wellston.csv */,
-				1452795B17FBC94B00AC912F /* stations.csv */,
-				143E6ED217FA7E5900FCC26C /* shrewsbury.csv */,
 				143E6ECE17FA6DAD00FCC26C /* music_noise.wav */,
 				143E6E9B17F528BE00FCC26C /* NextMetroSTL-Info.plist */,
 				143E6E9C17F528BE00FCC26C /* InfoPlist.strings */,
@@ -291,6 +519,12 @@
 				143E6EC317F528BE00FCC26C /* NextMetroSTLTests.h */,
 				143E6EC417F528BE00FCC26C /* NextMetroSTLTests.m */,
 				143E6EBE17F528BE00FCC26C /* Supporting Files */,
+				14770CCC1842A67B00BC8E58 /* NextMetroTrailTests.h */,
+				14770CCD1842A67B00BC8E58 /* NextMetroTrailTests.m */,
+				14770CCF1842DCA300BC8E58 /* NSDate+NSDateMock.h */,
+				14770CD01842DCA300BC8E58 /* NSDate+NSDateMock.m */,
+				14770CD21842E04500BC8E58 /* NextMetroSwizzle.h */,
+				14770CD31842E04500BC8E58 /* NextMetroSwizzle.m */,
 			);
 			path = NextMetroSTLTests;
 			sourceTree = "<group>";
@@ -376,50 +610,117 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C139381855469200D9D456 /* 8th_pine-sunday.csv in Resources */,
+				14C1393A1855469200D9D456 /* arch_lacledes-saturday.csv in Resources */,
+				14C1397D1855469200D9D456 /* rock_road-sunday.csv in Resources */,
+				14C139891855469200D9D456 /* sunnen-saturday.csv in Resources */,
+				14C139661855469200D9D456 /* jjk_center-mf.csv in Resources */,
+				14C139941855469200D9D456 /* union_station-mf.csv in Resources */,
+				14C139371855469200D9D456 /* 8th_pine-saturday.csv in Resources */,
+				14C1396A1855469200D9D456 /* lambert_east-saturday.csv in Resources */,
+				14C1396B1855469200D9D456 /* lambert_east-sunday.csv in Resources */,
+				14C1394B1855469200D9D456 /* college-mf.csv in Resources */,
+				14C1395A1855469200D9D456 /* fairview_heights-mf.csv in Resources */,
+				14C139621855469200D9D456 /* forsyth-sunday.csv in Resources */,
+				1428F89F18753A4700F1D25A /* stations.csv in Resources */,
+				14C1393D1855469200D9D456 /* belleville-saturday.csv in Resources */,
+				14C139651855469200D9D456 /* grand-sunday.csv in Resources */,
+				14C1395D1855469200D9D456 /* forest_park-mf.csv in Resources */,
+				14C139751855469200D9D456 /* north_hanley-mf.csv in Resources */,
+				14C1397B1855469200D9D456 /* rock_road-mf.csv in Resources */,
+				14C1393E1855469200D9D456 /* belleville-sunday.csv in Resources */,
+				14C139331855469200D9D456 /* 5th_missouri-mf.csv in Resources */,
+				14C139981855469200D9D456 /* washington_park-saturday.csv in Resources */,
+				14C139991855469200D9D456 /* washington_park-sunday.csv in Resources */,
+				14C1396D1855469200D9D456 /* lambert_main-saturday.csv in Resources */,
 				143E6E9E17F528BE00FCC26C /* InfoPlist.strings in Resources */,
+				14C1395B1855469200D9D456 /* fairview_heights-saturday.csv in Resources */,
+				14C139541855469200D9D456 /* east_riverfront-mf.csv in Resources */,
+				14C1398E1855469200D9D456 /* umsl_north-mf.csv in Resources */,
+				14C1398C1855469200D9D456 /* swansea-saturday.csv in Resources */,
+				14C139581855469200D9D456 /* emerson_park-saturday.csv in Resources */,
+				14C139931855469200D9D456 /* umsl_south-sunday.csv in Resources */,
+				14C139761855469200D9D456 /* north_hanley-saturday.csv in Resources */,
+				14C139411855469200D9D456 /* brentwood-sunday.csv in Resources */,
+				14C1394E1855469200D9D456 /* convention_center-mf.csv in Resources */,
 				143E6EA617F528BE00FCC26C /* Default.png in Resources */,
+				14A352E31865CBE3004D149E /* richmond_heights-sunday.csv in Resources */,
+				14C139921855469200D9D456 /* umsl_south-saturday.csv in Resources */,
+				14C1394A1855469200D9D456 /* clayton-sunday.csv in Resources */,
+				14C139341855469200D9D456 /* 5th_missouri-saturday.csv in Resources */,
+				14A352E11865CBE3004D149E /* richmond_heights-mf.csv in Resources */,
+				14C139521855469200D9D456 /* delmar-saturday.csv in Resources */,
+				14C1394F1855469200D9D456 /* convention_center-saturday.csv in Resources */,
+				14C1394D1855469200D9D456 /* college-sunday.csv in Resources */,
+				14C139641855469200D9D456 /* grand-saturday.csv in Resources */,
+				14C139441855469200D9D456 /* central_west_end-sunday.csv in Resources */,
+				14C139681855469200D9D456 /* jjk_center-sunday.csv in Resources */,
+				14C139871855469200D9D456 /* stadium-sunday.csv in Resources */,
+				14C139401855469200D9D456 /* brentwood-saturday.csv in Resources */,
+				14C139591855469200D9D456 /* emerson_park-sunday.csv in Resources */,
+				14C1393C1855469200D9D456 /* belleville-mf.csv in Resources */,
+				14C139721855469200D9D456 /* memorial_hospital-mf.csv in Resources */,
+				14C1393F1855469200D9D456 /* brentwood-mf.csv in Resources */,
+				14C139361855469200D9D456 /* 8th_pine-mf.csv in Resources */,
 				143E6EA817F528BE00FCC26C /* Default@2x.png in Resources */,
 				143E6EAA17F528BE00FCC26C /* Default-568h@2x.png in Resources */,
 				143E6EB017F528BE00FCC26C /* NextMetroViewController.xib in Resources */,
 				143E6ECF17FA6DAD00FCC26C /* music_noise.wav in Resources */,
-				143E6ED317FA7E5900FCC26C /* shrewsbury.csv in Resources */,
-				1452795C17FBC94B00AC912F /* stations.csv in Resources */,
-				14EE0785182CAC5500EBA22F /* 5th_missouri.csv in Resources */,
-				14EE0786182CAC5500EBA22F /* 8th_pine.csv in Resources */,
-				14EE0787182CAC5500EBA22F /* arch_lacledes.csv in Resources */,
-				14EE0788182CAC5500EBA22F /* belleville.csv in Resources */,
-				14EE0789182CAC5500EBA22F /* brentwood.csv in Resources */,
-				14EE078A182CAC5500EBA22F /* central_west_end.csv in Resources */,
-				14EE078B182CAC5500EBA22F /* civic_center.csv in Resources */,
-				14EE078C182CAC5500EBA22F /* clayton.csv in Resources */,
-				14EE078D182CAC5500EBA22F /* college.csv in Resources */,
-				14EE078E182CAC5500EBA22F /* convention_center.csv in Resources */,
-				14EE078F182CAC5500EBA22F /* delmar.csv in Resources */,
-				14EE0790182CAC5500EBA22F /* east_riverfront.csv in Resources */,
-				14EE0791182CAC5500EBA22F /* emerson_park.csv in Resources */,
-				14EE0792182CAC5500EBA22F /* fairview_heights.csv in Resources */,
-				14EE0793182CAC5500EBA22F /* forest_park.csv in Resources */,
-				14EE0794182CAC5500EBA22F /* forsyth.csv in Resources */,
-				14EE0795182CAC5500EBA22F /* grand.csv in Resources */,
-				14EE0796182CAC5500EBA22F /* jjk_center.csv in Resources */,
-				14EE0797182CAC5500EBA22F /* lambert_east.csv in Resources */,
-				14EE0798182CAC5500EBA22F /* lambert_main.csv in Resources */,
-				14EE0799182CAC5500EBA22F /* maplewood.csv in Resources */,
-				14EE079A182CAC5500EBA22F /* memorial_hospital.csv in Resources */,
-				14EE079B182CAC5500EBA22F /* north_hanley.csv in Resources */,
-				14EE079C182CAC5500EBA22F /* richmond_heights.csv in Resources */,
-				14EE079D182CAC5500EBA22F /* rockroad.csv in Resources */,
-				14EE079E182CAC5500EBA22F /* shiloh_scott.csv in Resources */,
-				14EE079F182CAC5500EBA22F /* skinker.csv in Resources */,
-				14EE07A0182CAC5500EBA22F /* stadium.csv in Resources */,
-				14EE07A1182CAC5500EBA22F /* sunnen.csv in Resources */,
-				14EE07A2182CAC5500EBA22F /* swansea.csv in Resources */,
-				14EE07A3182CAC5500EBA22F /* umsl_north.csv in Resources */,
-				14EE07A4182CAC5500EBA22F /* umsl_south.csv in Resources */,
-				14EE07A5182CAC5500EBA22F /* union_station.csv in Resources */,
-				14EE07A6182CAC5500EBA22F /* washington_park.csv in Resources */,
-				14EE07A7182CAC5500EBA22F /* wellston.csv in Resources */,
+				14C139531855469200D9D456 /* delmar-sunday.csv in Resources */,
+				14C139431855469200D9D456 /* central_west_end-saturday.csv in Resources */,
+				14C139471855469200D9D456 /* civic_center-sunday.csv in Resources */,
+				14C139881855469200D9D456 /* sunnen-mf.csv in Resources */,
+				14C1396F1855469200D9D456 /* maplewood-mf.csv in Resources */,
+				14C139461855469200D9D456 /* civic_center-saturday.csv in Resources */,
+				14C1398A1855469200D9D456 /* sunnen-sunday.csv in Resources */,
+				14C139961855469200D9D456 /* union_station-sunday.csv in Resources */,
+				14C139561855469200D9D456 /* east_riverfront-sunday.csv in Resources */,
+				14C139571855469200D9D456 /* emerson_park-mf.csv in Resources */,
+				14C139421855469200D9D456 /* central_west_end-mf.csv in Resources */,
+				14C1398B1855469200D9D456 /* swansea-mf.csv in Resources */,
 				14BBD44E18334FA000A351F4 /* MainStoryboard.storyboard in Resources */,
+				14C139911855469200D9D456 /* umsl_south-mf.csv in Resources */,
+				14C139971855469200D9D456 /* washington_park-mf.csv in Resources */,
+				14C139501855469200D9D456 /* convention_center-sunday.csv in Resources */,
+				14C1397E1855469200D9D456 /* shiloh_scott-mf.csv in Resources */,
+				14C139491855469200D9D456 /* clayton-saturday.csv in Resources */,
+				14C1393B1855469200D9D456 /* arch_lacledes-sunday.csv in Resources */,
+				14C139601855469200D9D456 /* forsyth-mf.csv in Resources */,
+				14C139551855469200D9D456 /* east_riverfront-saturday.csv in Resources */,
+				14C1396C1855469200D9D456 /* lambert_main-mf.csv in Resources */,
+				14C139861855469200D9D456 /* stadium-saturday.csv in Resources */,
+				14C139771855469200D9D456 /* north_hanley-sunday.csv in Resources */,
+				14C139831855469200D9D456 /* skinker-saturday.csv in Resources */,
+				14C1397C1855469200D9D456 /* rock_road-saturday.csv in Resources */,
+				14C1395E1855469200D9D456 /* forest_park-saturday.csv in Resources */,
+				14C139451855469200D9D456 /* civic_center-mf.csv in Resources */,
+				14C139391855469200D9D456 /* arch_lacledes-mf.csv in Resources */,
+				14C139841855469200D9D456 /* skinker-sunday.csv in Resources */,
+				14C139481855469200D9D456 /* clayton-mf.csv in Resources */,
+				14C1395C1855469200D9D456 /* fairview_heights-sunday.csv in Resources */,
+				14A352E21865CBE3004D149E /* richmond_heights-saturday.csv in Resources */,
+				14C139631855469200D9D456 /* grand-mf.csv in Resources */,
+				14C139801855469200D9D456 /* shrewsbury-saturday.csv in Resources */,
+				14C139671855469200D9D456 /* jjk_center-saturday.csv in Resources */,
+				14C139691855469200D9D456 /* lambert_east-mf.csv in Resources */,
+				14C1398D1855469200D9D456 /* swansea-sunday.csv in Resources */,
+				14C1397F1855469200D9D456 /* shrewsbury-mf.csv in Resources */,
+				14C139851855469200D9D456 /* stadium-mf.csv in Resources */,
+				14C1394C1855469200D9D456 /* college-saturday.csv in Resources */,
+				14C1395F1855469200D9D456 /* forest_park-sunday.csv in Resources */,
+				14C139611855469200D9D456 /* forsyth-saturday.csv in Resources */,
+				14C139951855469200D9D456 /* union_station-saturday.csv in Resources */,
+				14C139741855469200D9D456 /* memorial_hospital-sunday.csv in Resources */,
+				14C139511855469200D9D456 /* delmar-mf.csv in Resources */,
+				14C139731855469200D9D456 /* memorial_hospital-saturday.csv in Resources */,
+				14C139701855469200D9D456 /* maplewood-saturday.csv in Resources */,
+				14C1398F1855469200D9D456 /* umsl_north-saturday.csv in Resources */,
+				14C139811855469200D9D456 /* shrewsbury-sunday.csv in Resources */,
+				14C139711855469200D9D456 /* maplewood-sunday.csv in Resources */,
+				14C139901855469200D9D456 /* umsl_north-sunday.csv in Resources */,
+				14C139351855469200D9D456 /* 5th_missouri-sunday.csv in Resources */,
+				14C139821855469200D9D456 /* skinker-mf.csv in Resources */,
+				14C1396E1855469200D9D456 /* lambert_main-sunday.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +761,8 @@
 				14EE091A1831C50700EBA22F /* NextMetroStationStore.m in Sources */,
 				14EE091D1831C77900EBA22F /* NextMetroStation.m in Sources */,
 				14EE09201831CAD100EBA22F /* NextMetroTrain.m in Sources */,
+				14A352C718596754004D149E /* NextMetroUtil.m in Sources */,
+				14770CD71844159D00BC8E58 /* NextMetroReminderStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +771,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				143E6EC517F528BE00FCC26C /* NextMetroSTLTests.m in Sources */,
+				14770CCE1842A67B00BC8E58 /* NextMetroTrailTests.m in Sources */,
+				14770CD11842DCA300BC8E58 /* NSDate+NSDateMock.m in Sources */,
+				14770CD41842E04500BC8E58 /* NextMetroSwizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

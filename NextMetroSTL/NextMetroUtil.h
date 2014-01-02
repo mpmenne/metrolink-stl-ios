@@ -12,4 +12,6 @@
 
 + (UIColor*) colorWithHexString:(NSString*)hex;
 
++ (UIColor*) colorWithHexString:(NSString*)hex withAlpha:(float)alpha;
+
 @end

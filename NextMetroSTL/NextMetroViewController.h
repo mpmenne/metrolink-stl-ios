@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 @class NextMetroTrain;
 
-@interface NextMetroViewController : UIViewController
+@interface NextMetroViewController : UIViewController<UIScrollViewDelegate>
 {
     
     int count;
@@ -23,8 +23,11 @@
     IBOutlet UILabel *departureLabel;
 
 }
+@property(strong, nonatomic) UIColor *uiBackgroundColor;
 
 +(NextMetroViewController*) blankView;
++(NextMetroViewController*) stationNotFoundView;
++(NextMetroViewController*) gpsNotEnabledView;
 +(NextMetroViewController *)viewForNextTrain:(NSDate*)atTime;
 +(NextMetroViewController *) viewForPreviousTrain:(NSDate*)atTime;
 
@@ -32,6 +35,7 @@
 
 -(id) initForTrain:(NextMetroTrain*)train atStation:(NSString*) stationName;
 
+-(void) setBackgroundColor:(UIColor*)uiColor;
 
 -(NSDate*)nextTrainTime;
 

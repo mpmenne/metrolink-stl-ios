@@ -50,11 +50,13 @@
     NextMetroTrain *mostRecentTrain;
     for (NextMetroTrain *train in [self trains]) {
         NSComparisonResult result = [[train trainTime] compare:startingAt];
-        if (result == NSOrderedAscending || result != NSOrderedSame) {
-            mostRecentTrain = train;
-            continue;
-        } else {
-            return mostRecentTrain;
+        if (train.departureTime) {
+            if (result == NSOrderedAscending || result != NSOrderedSame) {
+                mostRecentTrain = train;
+                continue;
+            } else {
+                return mostRecentTrain;
+            }
         }
     }
     return nil;
@@ -76,8 +78,9 @@
             NSString *trainHeaderString = columns[0];
             NSDate *trainTime = [self parseDateFromString:columns[5]];
             NSDate *departureTime = [self parseDateFromString:columns[6]];
+            NSString *trainColor = columns[2];
             NSLog(@"%@ %@", trainHeaderString, trainTime);
-            NextMetroTrain *train = [[NextMetroTrain alloc] initWithHeader:trainHeaderString withColor:@"red" withTime:trainTime withDeparture:departureTime];
+            NextMetroTrain *train = [[NextMetroTrain alloc] initWithHeader:trainHeaderString withColor:trainColor withTime:trainTime withDeparture:departureTime];
             [array addObject:train];
         }
     }

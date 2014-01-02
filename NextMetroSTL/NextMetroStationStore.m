@@ -29,14 +29,16 @@
     NSString *closestStationName = @"Current station not found";
     NSString *stationNickNameString = @"";
     for (NSString *stationLine in stationsLines) {
-        NSString *stationName = [stationLine componentsSeparatedByString: @","][5];
-        NSString *stationLat = [stationLine componentsSeparatedByString: @","][0];
-        NSString *stationLong = [stationLine componentsSeparatedByString: @","][2];
-        CLLocation *stationLocation = [[CLLocation alloc] initWithLatitude:[stationLat doubleValue] longitude:[stationLong doubleValue]];
-        float distance = [self kilometresBetweenPlace1:location andPlace2:stationLocation];
-        if (distance < closestDistance) {
-            closestDistance = distance;
-            closestStationName = [stationName stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+        if (stationLine && stationLine.length != 0) {
+            NSString *stationName = [stationLine componentsSeparatedByString: @","][5];
+            NSString *stationLat = [stationLine componentsSeparatedByString: @","][0];
+            NSString *stationLong = [stationLine componentsSeparatedByString: @","][2];
+            CLLocation *stationLocation = [[CLLocation alloc] initWithLatitude:[stationLat doubleValue] longitude:[stationLong doubleValue]];
+            float distance = [self kilometresBetweenPlace1:location andPlace2:stationLocation];
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestStationName = [stationName stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+            }
         }
     }
     
@@ -65,17 +67,19 @@
     NSString *closestStationName = @"Current station not found";
     NSString *stationNickNameString = @"";
     for (NSString *stationLine in stationsLines) {
-        NSString *stationName = [stationLine componentsSeparatedByString: @","][5];
-        NSString *stationLat = [stationLine componentsSeparatedByString: @","][0];
-        NSString *stationLong = [stationLine componentsSeparatedByString: @","][2];
-        NSLog(@"  %f   ...  %f", [stationLat doubleValue], [stationLong doubleValue]);
-        CLLocation *stationLocation = [[CLLocation alloc] initWithLatitude:[stationLat doubleValue] longitude:[stationLong doubleValue]];
-        float distance = [self kilometresBetweenPlace1:currentLocation andPlace2:stationLocation];
-        //        NSLog(@"station %@ is %@ kilometers away", stationName, [NSString stringWithFormat:@"%f", distance / 1000]);
-        if (distance < closestDistance) {
-            closestDistance = distance;
-            closestStationName = [stationName stringByReplacingOccurrencesOfString:@"\"" withString:@""];
-            stationNickNameString = [stationLine componentsSeparatedByString: @","][7];
+        if (stationLine && stationLine.length != 0) {
+            NSString *stationName = [stationLine componentsSeparatedByString: @","][5];
+            NSString *stationLat = [stationLine componentsSeparatedByString: @","][0];
+            NSString *stationLong = [stationLine componentsSeparatedByString: @","][2];
+            NSLog(@"  %f   ...  %f", [stationLat doubleValue], [stationLong doubleValue]);
+            CLLocation *stationLocation = [[CLLocation alloc] initWithLatitude:[stationLat doubleValue] longitude:[stationLong doubleValue]];
+            float distance = [self kilometresBetweenPlace1:currentLocation andPlace2:stationLocation];
+            //        NSLog(@"station %@ is %@ kilometers away", stationName, [NSString stringWithFormat:@"%f", distance / 1000]);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestStationName = [stationName stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+                stationNickNameString = [stationLine componentsSeparatedByString: @","][7];
+            }
         }
     }
     

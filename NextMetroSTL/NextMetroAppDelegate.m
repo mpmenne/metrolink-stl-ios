@@ -43,6 +43,7 @@
                                       animated:NO
                                     completion:NULL];
     }
+    
     return YES;
 }
 
@@ -82,10 +83,20 @@
     
     NextMetroViewController *newPageView = [NextMetroViewController viewForNextTrain:[NSDate date]];
     UIPageViewController *pageViewController = (UIPageViewController *)self.window.rootViewController;
-    [pageViewController setViewControllers:@[newPageView]
-                                 direction:UIPageViewControllerNavigationDirectionForward
-                                  animated:NO
-                                completion:NULL];
+    
+    if (newPageView) {
+        [pageViewController setViewControllers:@[newPageView]
+                                     direction:UIPageViewControllerNavigationDirectionForward
+                                      animated:NO
+                                    completion:NULL];
+    } else {
+        NextMetroViewController *stationNotFoundView = [NextMetroViewController stationNotFoundView];
+        [pageViewController setViewControllers:@[stationNotFoundView]
+                                     direction:UIPageViewControllerNavigationDirectionForward
+                                      animated:NO
+                                    completion:NULL];
+    }
+    
 }
 
 -(void) dealloc
