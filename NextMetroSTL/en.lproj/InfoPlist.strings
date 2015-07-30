@@ -1,2 +1,2 @@
 /* Localized versions of Info.plist keys */
-
+NSLocationWhenInUseUsageDescription = "GPS is required to find the nearest Metrolink station";

@@ -78,7 +78,7 @@
             if (distance < closestDistance) {
                 closestDistance = distance;
                 closestStationName = [stationName stringByReplacingOccurrencesOfString:@"\"" withString:@""];
-                stationNickNameString = [stationLine componentsSeparatedByString: @","][7];
+                stationNickNameString = [stationLine componentsSeparatedByString: @","][6];
             }
         }
     }

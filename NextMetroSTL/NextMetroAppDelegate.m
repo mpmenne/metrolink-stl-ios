@@ -25,6 +25,9 @@
 {
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
+    if ([CLLocationManager authorizationStatus] == 0) {
+        [locationManager requestWhenInUseAuthorization];
+    }
     [locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
     [locationManager startMonitoringSignificantLocationChanges];
     [locationManager startUpdatingLocation];
@@ -104,10 +107,16 @@
     locationManager = nil;
 }
 
+- (void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus) status
+{
+    NSLog(@"Status is %i", status);
+}
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"%@", error);
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
