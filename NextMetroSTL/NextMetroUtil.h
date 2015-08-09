@@ -10,6 +10,8 @@
 
 @interface NextMetroUtil : NSObject
 
++(NSDate*) parseDateFromString:(NSString*)dateString;
+
 + (UIColor*) colorWithHexString:(NSString*)hex;
 
 + (UIColor*) colorWithHexString:(NSString*)hex withAlpha:(float)alpha;

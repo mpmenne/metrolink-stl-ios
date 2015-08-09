@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 com.menne. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface NextMetroSTLTests : SenTestCase
+@interface NextMetroSTLTests : XCTestCase {
+    NSDateFormatter* _dateFormatter;
+}
 
 @end
