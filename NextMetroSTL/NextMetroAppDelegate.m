@@ -23,6 +23,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
     if ([CLLocationManager authorizationStatus] == 0) {
@@ -32,12 +35,12 @@
     [locationManager startMonitoringSignificantLocationChanges];
     [locationManager startUpdatingLocation];
     currentStationName = @"none";
+
+    self.window.rootViewController = [[UIPageViewController alloc] init];
     
     NextMetroViewController *blankView = [NextMetroViewController blankView];
     
     if (blankView) {
-        
-        
         UIPageViewController *pageViewController = (UIPageViewController *)self.window.rootViewController;
         pageViewController.dataSource = self;
         
