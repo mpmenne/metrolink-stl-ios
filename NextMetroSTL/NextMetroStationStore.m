@@ -20,6 +20,30 @@
     return store;
 }
 
+-(NSArray *) stationList
+{
+    NSString *stationsPath = [[NSBundle mainBundle] pathForResource:@"stations" ofType:@"csv"];
+    NSString *stationsContents = [NSString stringWithContentsOfFile:stationsPath encoding:NSUTF8StringEncoding error:NULL];
+    NSArray *stationsLines = [[ stationsContents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]] mutableCopy];
+    return stationsLines;
+}
+
+-(NSMutableArray *) stationOptions
+{
+    NSString *stationsPath = [[NSBundle mainBundle] pathForResource:@"stations" ofType:@"csv"];
+    NSString *stationsContents = [NSString stringWithContentsOfFile:stationsPath encoding:NSUTF8StringEncoding error:NULL];
+    NSArray *stationsLines = [[ stationsContents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]] mutableCopy];
+    NSMutableArray *stationNames = [NSMutableArray array];
+    [stationNames addObject: @"NEAREST STATION"];
+    for(int i = 0; i < stationsLines.count; i++) {
+        NSArray *stationArray = [stationsLines[i] componentsSeparatedByString: @","];
+        if(stationArray.count > 4) {
+            [stationNames addObject:[stationArray[5] stringByReplacingOccurrencesOfString:@"\"" withString:@""]];
+        }
+    }
+    return stationNames;
+}
+
 -(NSString *) findClosestLocation: (CLLocation*)location
 {
     NSString *stationsPath = [[NSBundle mainBundle] pathForResource:@"stations" ofType:@"csv"];

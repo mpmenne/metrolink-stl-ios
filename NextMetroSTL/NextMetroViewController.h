@@ -28,7 +28,7 @@
 +(NextMetroViewController*) blankView;
 +(NextMetroViewController*) stationNotFoundView;
 +(NextMetroViewController*) gpsNotEnabledView;
-+(NextMetroViewController *)viewForNextTrain:(NSDate*)atTime;
++(NextMetroViewController *) viewForNextTrain:(NSDate*)atTime;
 +(NextMetroViewController *) viewForPreviousTrain:(NSDate*)atTime;
 
 -(IBAction)createReminder:(id)sender;

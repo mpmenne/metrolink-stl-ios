@@ -97,9 +97,9 @@
     [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
     NSString *dayOfWeek = [myFormatter stringFromDate:[NSDate date]];
     if ([dayOfWeek isEqualToString:@"Saturday"]) {
-        return @"saturday";
+        return @"ss";
     } else if ([dayOfWeek isEqualToString:@"Saturday"]) {
-        return @"sunday";
+        return @"ss";
     } else {
         return @"mf";
     }

@@ -12,6 +12,7 @@
 #import "NextMetroStationStore.h"
 #import "NextMetroStation.h"
 #import "NextMetroTrain.h"
+#import "NextMetroStationViewController.h"
 
 @interface NextMetroAppDelegate()
 {
@@ -20,6 +21,12 @@
 @end
 
 @implementation NextMetroAppDelegate
+
+-(IBAction)showStations:(id)sender
+{
+    NSLog(@"Here is a list of all stations");
+    self.window.rootViewController = [[NextMetroStationViewController alloc] initWithStationList:[[NextMetroStationStore defaultStore] stationOptions]];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
