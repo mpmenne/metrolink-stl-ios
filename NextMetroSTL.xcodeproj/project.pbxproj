@@ -108,7 +108,7 @@
 		14A352C718596754004D149E /* NextMetroUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A352C618596754004D149E /* NextMetroUtil.m */; };
 		14A352CC185971E8004D149E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A352CB185971E8004D149E /* QuartzCore.framework */; };
 		14BBD44B18334EEF00A351F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6E9717F528BE00FCC26C /* CoreGraphics.framework */; };
-		14BBD44E18334FA000A351F4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BBD44C18334FA000A351F4 /* MainStoryboard.storyboard */; };
+		14BF802D212896A3006939E0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BF802C212896A3006939E0 /* MainStoryboard.storyboard */; };
 		14BFAA5C1B6F14D80071FF7F /* NextMetroUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BFAA5B1B6F14D80071FF7F /* NextMetroUtilTests.m */; };
 		14BFAAF01B785C110071FF7F /* NextMetroStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BFAAEF1B785C110071FF7F /* NextMetroStationViewController.m */; };
 		14BFAAF41B7866AF0071FF7F /* NextMetroStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BFAAF31B7866AF0071FF7F /* NextMetroStationCell.m */; };
@@ -237,7 +237,7 @@
 		14A352C518596754004D149E /* NextMetroUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroUtil.h; sourceTree = "<group>"; };
 		14A352C618596754004D149E /* NextMetroUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroUtil.m; sourceTree = "<group>"; };
 		14A352CB185971E8004D149E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		14BBD44D18334FA000A351F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = ../../../iOS/PhotoScroller/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		14BF802C212896A3006939E0 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		14BFAA5B1B6F14D80071FF7F /* NextMetroUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroUtilTests.m; sourceTree = "<group>"; };
 		14BFAAEF1B785C110071FF7F /* NextMetroStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroStationViewController.m; sourceTree = "<group>"; };
 		14BFAAF11B785C310071FF7F /* NextMetroStationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextMetroStationViewController.h; sourceTree = "<group>"; };
@@ -316,6 +316,7 @@
 		143E6E9917F528BE00FCC26C /* NextMetroSTL */ = {
 			isa = PBXGroup;
 			children = (
+				14BF802C212896A3006939E0 /* MainStoryboard.storyboard */,
 				143E6EA217F528BE00FCC26C /* NextMetroAppDelegate.h */,
 				143E6EA317F528BE00FCC26C /* NextMetroAppDelegate.m */,
 				14BFAAF11B785C310071FF7F /* NextMetroStationViewController.h */,
@@ -421,7 +422,6 @@
 				143CD63B21053C86004B63FD /* washington_park_metrolink_station-ss.csv */,
 				143CD63C21053C86004B63FD /* wellston_metrolink_station-mf.csv */,
 				143CD63D21053C86004B63FD /* wellston_metrolink_station-ss.csv */,
-				14BBD44C18334FA000A351F4 /* MainStoryboard.storyboard */,
 				143E6ECE17FA6DAD00FCC26C /* music_noise.wav */,
 				143E6E9B17F528BE00FCC26C /* NextMetroSTL-Info.plist */,
 				143E6E9C17F528BE00FCC26C /* InfoPlist.strings */,
@@ -563,6 +563,7 @@
 				143CD65A21053C86004B63FD /* forest_park_metrolink_station-mf.csv in Resources */,
 				143CD68621053C86004B63FD /* union_sta_metrolink_station-ss.csv in Resources */,
 				143E6EAA17F528BE00FCC26C /* Default-568h@2x.png in Resources */,
+				14BF802D212896A3006939E0 /* MainStoryboard.storyboard in Resources */,
 				143CD68521053C86004B63FD /* union_sta_metrolink_station-mf.csv in Resources */,
 				143CD66721053C86004B63FD /* lambert_main_trml_metrolink_station-ss.csv in Resources */,
 				143CD65D21053C86004B63FD /* forsyth_metrolink_station-ss.csv in Resources */,
@@ -605,7 +606,6 @@
 				143CD66221053C86004B63FD /* lacledes_landing_metrolink_station-mf.csv in Resources */,
 				143CD65321053C86004B63FD /* delmar_metrolink_station-ss.csv in Resources */,
 				143CD64A21053C86004B63FD /* clayton_metrolink_station-mf.csv in Resources */,
-				14BBD44E18334FA000A351F4 /* MainStoryboard.storyboard in Resources */,
 				143CD64621053C86004B63FD /* central_west_end_metrolink_station-mf.csv in Resources */,
 				143CD67B21053C86004B63FD /* sunnen_metrolink_station-mf.csv in Resources */,
 				143CD68421053C86004B63FD /* umsl_south_metrolink_station-ss.csv in Resources */,
@@ -705,14 +705,6 @@
 				143E6EC117F528BE00FCC26C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		14BBD44C18334FA000A351F4 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14BBD44D18334FA000A351F4 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
