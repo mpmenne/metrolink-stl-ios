@@ -31,8 +31,6 @@
 +(NextMetroViewController *) viewForNextTrain:(NSDate*)atTime;
 +(NextMetroViewController *) viewForPreviousTrain:(NSDate*)atTime;
 
--(IBAction)createReminder:(id)sender;
-
 -(id) initForTrain:(NextMetroTrain*)train atStation:(NSString*) stationName;
 
 -(void) setBackgroundColor:(UIColor*)uiColor;

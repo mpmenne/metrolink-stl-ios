@@ -99,10 +99,8 @@
 		143E6EBA17F528BE00FCC26C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6E9517F528BE00FCC26C /* Foundation.framework */; };
 		143E6EC217F528BE00FCC26C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 143E6EC017F528BE00FCC26C /* InfoPlist.strings */; };
 		143E6EC517F528BE00FCC26C /* NextMetroSTLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 143E6EC417F528BE00FCC26C /* NextMetroSTLTests.m */; };
-		143E6ECF17FA6DAD00FCC26C /* music_noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 143E6ECE17FA6DAD00FCC26C /* music_noise.wav */; };
 		143E6ED117FA73FF00FCC26C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143E6ED017FA73FF00FCC26C /* AudioToolbox.framework */; };
 		1452795A17FBBF7800AC912F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1452795917FBBF7800AC912F /* CoreLocation.framework */; };
-		14770CD71844159D00BC8E58 /* NextMetroReminderStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14770CD61844159D00BC8E58 /* NextMetroReminderStore.m */; };
 		14770CDA1844193D00BC8E58 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14770CD8184418F300BC8E58 /* EventKit.framework */; };
 		1490E7F01C5CB96300D0193D /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1490E7EF1C5CB96300D0193D /* Images-2.xcassets */; };
 		14A352C718596754004D149E /* NextMetroUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A352C618596754004D149E /* NextMetroUtil.m */; };
@@ -227,11 +225,8 @@
 		143E6EC117F528BE00FCC26C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		143E6EC317F528BE00FCC26C /* NextMetroSTLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextMetroSTLTests.h; sourceTree = "<group>"; };
 		143E6EC417F528BE00FCC26C /* NextMetroSTLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextMetroSTLTests.m; sourceTree = "<group>"; };
-		143E6ECE17FA6DAD00FCC26C /* music_noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = music_noise.wav; path = "../../../../../../Dropbox/Archive/ess/audiology-sentence-test-tool/wavs/music_noise.wav"; sourceTree = "<group>"; };
 		143E6ED017FA73FF00FCC26C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1452795917FBBF7800AC912F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		14770CD51844159D00BC8E58 /* NextMetroReminderStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroReminderStore.h; sourceTree = "<group>"; };
-		14770CD61844159D00BC8E58 /* NextMetroReminderStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextMetroReminderStore.m; sourceTree = "<group>"; };
 		14770CD8184418F300BC8E58 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		1490E7EF1C5CB96300D0193D /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		14A352C518596754004D149E /* NextMetroUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextMetroUtil.h; sourceTree = "<group>"; };
@@ -333,8 +328,6 @@
 				14EE091C1831C77900EBA22F /* NextMetroStation.m */,
 				14EE091E1831CAD100EBA22F /* NextMetroTrain.h */,
 				14EE091F1831CAD100EBA22F /* NextMetroTrain.m */,
-				14770CD51844159D00BC8E58 /* NextMetroReminderStore.h */,
-				14770CD61844159D00BC8E58 /* NextMetroReminderStore.m */,
 				14A352C518596754004D149E /* NextMetroUtil.h */,
 				14A352C618596754004D149E /* NextMetroUtil.m */,
 				1490E7EF1C5CB96300D0193D /* Images-2.xcassets */,
@@ -422,7 +415,6 @@
 				143CD63B21053C86004B63FD /* washington_park_metrolink_station-ss.csv */,
 				143CD63C21053C86004B63FD /* wellston_metrolink_station-mf.csv */,
 				143CD63D21053C86004B63FD /* wellston_metrolink_station-ss.csv */,
-				143E6ECE17FA6DAD00FCC26C /* music_noise.wav */,
 				143E6E9B17F528BE00FCC26C /* NextMetroSTL-Info.plist */,
 				143E6E9C17F528BE00FCC26C /* InfoPlist.strings */,
 				143E6E9F17F528BE00FCC26C /* main.m */,
@@ -590,7 +582,6 @@
 				143CD65921053C86004B63FD /* fairview_heights_metrolink_station-ss.csv in Resources */,
 				143CD65221053C86004B63FD /* delmar_metrolink_station-mf.csv in Resources */,
 				143CD64221053C86004B63FD /* belleville_metrolink_station-mf.csv in Resources */,
-				143E6ECF17FA6DAD00FCC26C /* music_noise.wav in Resources */,
 				143CD68021053C86004B63FD /* u_city_big_bend_metrolink__station-ss.csv in Resources */,
 				143CD65621053C86004B63FD /* emerson_park_metrolink_station-mf.csv in Resources */,
 				143CD68321053C86004B63FD /* umsl_south_metrolink_station-mf.csv in Resources */,
@@ -659,7 +650,6 @@
 				14EE091D1831C77900EBA22F /* NextMetroStation.m in Sources */,
 				14EE09201831CAD100EBA22F /* NextMetroTrain.m in Sources */,
 				14A352C718596754004D149E /* NextMetroUtil.m in Sources */,
-				14770CD71844159D00BC8E58 /* NextMetroReminderStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
