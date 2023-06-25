@@ -76,7 +76,7 @@
     for (NSString *line in scheduleLines) {
         NSArray *columns = [line componentsSeparatedByString:@","];
         if ([columns count] > 3) {
-            NSString *trainHeaderString = columns[0];
+            NSString *trainHeaderString = [self formatTrainText:columns[0]];
             NSDate *trainTime = [NextMetroUtil parseDateFromString:columns[5]];
             NSDate *departureTime = [NextMetroUtil parseDateFromString:columns[6]];
             NSString *trainColor = columns[2];
@@ -104,5 +104,14 @@
         return @"mf";
     }
 }
+
+- (NSString *)formatTrainText:(NSString *)trainText {
+    trainText = [trainText stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    trainText = [trainText stringByReplacingOccurrencesOfString:@"BLUE LINE " withString:@""];
+    trainText = [trainText stringByReplacingOccurrencesOfString:@"RED LINE " withString:@""];
+    
+    return trainText;
+}
+
 
 @end
