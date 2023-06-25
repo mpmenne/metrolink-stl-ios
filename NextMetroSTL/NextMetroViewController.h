@@ -16,6 +16,7 @@
     int count;
     NSTimer *nsTimer;
     IBOutlet UILabel *trainHeader;
+    IBOutlet UILabel *trainColor;
     IBOutlet UILabel *timeUntilNextTrain;
     IBOutlet UILabel *currentStation;
     IBOutlet UILabel *stationNickName;
