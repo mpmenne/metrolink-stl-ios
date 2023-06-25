@@ -16,6 +16,8 @@
 }
 
 + (NextMetroStationStore *) defaultStore;
+- (NSArray *) stationList;
+- (NSMutableArray *) stationOptions;
 - (NSString*) findClosestLocation:(CLLocation *)location;
 - (void) updateLocation:(CLLocation *)location;
 - (NextMetroStation*) theCurrentStation;

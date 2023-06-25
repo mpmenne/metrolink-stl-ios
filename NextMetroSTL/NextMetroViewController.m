@@ -12,7 +12,6 @@
 #import "NextMetroStation.h"
 #import "NextMetroUtil.h"
 #import "NextMetroTrain.h"
-#import "NextMetroReminderStore.h"
 #import "NextMetroBackgroundLayer.h"
 #import "Math.h"
 
@@ -124,12 +123,6 @@
     NSLog(@"Hey we just noticed that you scrolled");
 }
 
--(IBAction)createReminder:(id)sender
-{
-    NSLog(@"Hey we're going to create a reminder now.");
-    NextMetroReminderStore *remindersStore = [NextMetroReminderStore reminders];
-    [remindersStore addEvent:[NSString stringWithFormat:@"Metrolink Reminder \r\n %@", _train.header]];
-}
 
 - (void)initTimer
 {    
